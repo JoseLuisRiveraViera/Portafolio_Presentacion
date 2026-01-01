@@ -41,8 +41,9 @@ export default function PortfolioPage() {
             <div className="space-y-6">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Sobre Mí</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Soy estudiante de TSU en Tecnologías de la Información con especialización en Desarrollo Multiplataforma, 
-                con planes de continuar hacia la Ingeniería. Me apasiona el código limpio y la arquitectura de software eficiente.
+                Estudiante de Ingeniería en Desarrollo y Gestión de Software con formación como TSU en Desarrollo de Software Multiplataforma. 
+                Enfocado en desarrollo web full-stack, con experiencia en proyectos reales utilizando Next.js, React y MySQL. 
+                Apasionado por crear soluciones eficientes y escalables en entornos empresariales.
               </p>
               
               <div className="flex flex-wrap gap-2">
