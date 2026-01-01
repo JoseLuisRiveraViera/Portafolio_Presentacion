@@ -138,7 +138,7 @@ export default function PortfolioPage() {
             <Card className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow">
               <div className="relative w-full h-48 bg-muted">
                  <Image 
-                  src="/imagenes/Konansa.png" 
+                  src="/imagenes/konansa.png" 
                   alt="Konansa" 
                   fill 
                   className="object-cover"
@@ -165,7 +165,7 @@ export default function PortfolioPage() {
               <div className="relative w-full h-48 bg-muted">
                  <Image 
                   src="/imagenes/novasense-presentation.png" 
-                  alt="Konansa" 
+                  alt="NovaSense" 
                   fill 
                   className="object-cover"
                 />
@@ -191,7 +191,7 @@ export default function PortfolioPage() {
               <div className="relative w-full h-48 bg-muted">
                  <Image 
                   src="/imagenes/echo-presentationn.png" 
-                  alt="Konansa" 
+                  alt="echo" 
                   fill 
                   className="object-cover"
                 />
