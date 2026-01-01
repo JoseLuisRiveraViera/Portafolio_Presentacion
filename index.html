@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Presentacion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="galaxy-background">
+        <header>
+            <h1>José Luis Rivera Viera</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">Sobre mí</a></li>
+                    <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="about">
+            <h2>Sobre Mí</h2>
+            <div class="about-container">
+                <img src="imagenes/yo.jpg" alt="Foto de José Luis Rivera Viera" class="profile-pic">
+                <p>
+                    ¡Hola! Mi nombre es José Luis Rivera Viera. Actualmente curso la carrera de Técnico Superior Universitario en Tecnologías de la Información, 
+                    con una especialización en Desarrollo de Software Multiplataforma. En un futuro cercano, planeo continuar mi formación académica en Ingeniería 
+                    en Gestión y Desarrollo de Software Multiplataforma.
+                    La programación y el aprendizaje constante son mis grandes pasiones, lo que me ha permitido adquirir conocimientos en tecnologías como PHP, 
+                    JavaScript, MySQL, PostgreSQL y Bootstrap. Me especializo en el desarrollo web y estoy en busca de oportunidades que me permitan aplicar 
+                    mis habilidades, participar en proyectos reales y crecer profesionalmente aprendiendo de expertos en la industria.
+                    Te invito a explorar mi portafolio y conocer más sobre los proyectos en los que he trabajado.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/jose-luis-rivera-viera/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href=" https://github.com/JoseLuisRiveraViera" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Proyectos</h2>
+            <div class="project-card">
+                <a href="https://bluesense.atwebpages.com/" target="_blank">
+                    <img src="imagenes/BlueSense.png" alt="Vista previa de NOVA·Sense" class="project-preview">
+                </a>
+                <h3>BlueSense</h3>
+                <p>Prototipo ganador de Mención Honorífica por Visión en el [REDACTED] Hackathon | México Node by Hackbox. 
+                    BlueSense es un proyecto diseñado para ayudar a comunidades afectadas por la contaminación del agua, especialmente en ríos.</p>
+            </div>
+            <div class="project-card">
+                <a href="https://joseluisriveraviera.github.io/Ram-rez-Plaza/" target="_blank">
+                    <img src="imagenes/RamirezPlaza.png" alt="Vista previa de Ramírez Plaza" class="project-preview">
+                </a>
+                <h3>Ramírez Plaza</h3>
+                <p>Sitio web para la promoción de la plaza comercial Ramírez Plaza.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Ponte en Contacto</h2>
+            <form action="https://formspree.io/f/movjlrnk" method="POST">
+                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <textarea name="message" placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 José Luis Rivera Viera. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
