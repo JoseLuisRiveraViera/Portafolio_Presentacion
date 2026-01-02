@@ -150,9 +150,17 @@ export default function PortfolioPage() {
                 <CardDescription>Control Financiero</CardDescription>
               </CardHeader>
               <CardContent className="flex-1">
-                <p className="text-sm text-muted-foreground">
-                  Plataforma web para la gestión de finanzas personales.
-                </p>
+              <p className="text-sm text-muted-foreground">
+               Sistema integral de finanzas personales: Proyecto de estadía profesional en {' '}
+                <a 
+                  href="https://www.wallavi.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="font-medium text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
+                >
+                  Wallavi
+                </a>.
+              </p>
               </CardContent>
               <CardFooter>
                 <Button asChild className="w-full">
@@ -177,7 +185,7 @@ export default function PortfolioPage() {
               </CardHeader>
               <CardContent className="flex-1">
                 <p className="text-sm text-muted-foreground">
-                  Sistema integral de Monitoreo con datos sobre calidad del agua en gráficos en tiempo real. Haz click para ver la galería.
+                  Sistema integral de Monitoreo con datos sobre calidad del agua en gráficos en tiempo real.
                 </p>
               </CardContent>
               <CardFooter>
