@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Github, Linkedin } from "lucide-react";
-import { ContactForm } from "@/components/contact-form"; // Ajusta la ruta si es necesario (ej: ui/contact-form)
-import { ProjectModal } from "@/components/project-modal"; // <--- IMPORTANTE: Importamos el nuevo componente
+import { ContactForm } from "@/components/contact-form";
+import { ProjectModal } from "@/components/project-modal"; 
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
