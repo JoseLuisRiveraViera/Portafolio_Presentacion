@@ -7,34 +7,16 @@ export const konansaVideoId = "m_L6e_WbdYo";
 
 export const konansaImages = [
   {
-    src: "/imagenes/konansa/presentacion.webp",
-    alt: "Presentación de Konansa con su asistente y la interfaz móvil",
-    caption: "Una mirada a Konansa",
-    timestamp: "00:36",
+    src: "/imagenes/konansa/producto-v2.webp",
+    alt: "Presentación recompuesta de las interfaces móviles originales de Konansa y su asistente",
+    caption: "La experiencia móvil",
+    note: "Composición de presentación",
   },
   {
-    src: "/imagenes/konansa/balance.webp",
-    alt: "Interfaz móvil de Konansa con el balance, los gastos y los ingresos",
-    caption: "Balance e información financiera",
-    timestamp: "01:00",
-  },
-  {
-    src: "/imagenes/konansa/movimientos.webp",
-    alt: "Tarjetas y últimos movimientos en el panel de Konansa",
-    caption: "Tarjetas y movimientos",
-    timestamp: "01:24",
-  },
-  {
-    src: "/imagenes/konansa/whatsapp.webp",
-    alt: "Demostración de una conversación con el asistente de Konansa en WhatsApp",
-    caption: "El asistente en WhatsApp",
-    timestamp: "01:12",
-  },
-  {
-    src: "/imagenes/konansa/presupuestos.webp",
-    alt: "Demostración del seguimiento financiero con el asistente de Konansa",
-    caption: "Seguimiento financiero",
-    timestamp: "01:36",
+    src: "/imagenes/konansa/panel-v2.webp",
+    alt: "Presentación recompuesta de Konansa con los paneles originales en laptop, tablet y teléfono",
+    caption: "El panel financiero",
+    note: "Composición de presentación",
   },
   {
     src: "/imagenes/konansa.png",

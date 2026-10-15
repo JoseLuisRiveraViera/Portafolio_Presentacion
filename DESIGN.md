@@ -10,7 +10,9 @@ colors:
   muted-foreground: "#66636b"
   accent: "#f5e9e9"
   border: "#dfdde1"
-  on-primary-muted: "#f0c7c7"
+  contact-surface: "#f4f2f3"
+  contact-placeholder: "#70666d"
+  contact-border: "#bcb4b9"
 typography:
   display:
     fontFamily: "Manrope"
@@ -87,17 +89,17 @@ components:
     typography: "{typography.label-strong}"
     padding: "10px 0px"
   button-contact:
-    backgroundColor: "{colors.primary-foreground}"
-    textColor: "{colors.primary}"
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.primary-foreground}"
     typography: "{typography.contact-action}"
     rounded: "{rounded.control}"
     height: "46px"
     padding: "8px 22px"
   button-contact-hover:
-    backgroundColor: "{colors.accent}"
+    backgroundColor: "#650000"
   field-contact:
     backgroundColor: "transparent"
-    textColor: "{colors.primary-foreground}"
+    textColor: "{colors.foreground}"
     typography: "{typography.control}"
     rounded: "{rounded.field}"
     height: "46px"
@@ -138,7 +140,7 @@ El sistema construido presenta el trabajo como un archivo abierto: fondo claro, 
 
 Manrope sostiene toda la superficie, desde el nombre de gran tamaño hasta los metadatos. La separación se obtiene con espacio, líneas finas y cambios de tono. Las capturas principales mantienen el artefacto completo; el retrato y las miniaturas tienen el recorte específico que requiere su función.
 
-La página permanece plana durante la lectura. La galería introduce una capa modal delimitada por un fondo atenuado y una sombra difusa. El granate también forma superficies completas para la muestra inicial y el contacto, con texto y controles claros sobre él.
+La página permanece plana durante la lectura. La galería introduce una capa modal delimitada por un fondo atenuado y una sombra difusa. El granate se concentra en acciones, selección y detalles: un trazo bajo el nombre, el progreso de lectura y el acento de contacto. La muestra inicial y el contacto descansan sobre neutros claros. El movimiento presenta el contenido una vez y responde a la interacción con gestos breves.
 
 **Key Characteristics:**
 
@@ -146,6 +148,7 @@ La página permanece plana durante la lectura. La galería introduce una capa mo
 - Una sola familia tipográfica y jerarquía por tamaño, peso y espaciado.
 - Artículos abiertos con capturas completas y metadatos próximos al proyecto.
 - Controles discretos, foco visible y estados de envío explícitos.
+- Entradas sutiles, trazo de firma y progreso de lectura sin animaciones en bucle.
 
 **The Complete Image Rule.** Las imágenes principales de proyectos se muestran completas. El recorte queda limitado al retrato y a las miniaturas de navegación.
 
@@ -159,10 +162,9 @@ La paleta combina un acento profundo con una base neutra clara. Los nombres de e
 
 | Token | Carácter y uso observado |
 | --- | --- |
-| primary | Granate: marca, acentos en titulares, acciones, enlaces, selección y superficies de muestra y contacto. |
-| primary-foreground | Blanco: texto y controles sobre granate; fondo del botón de envío. |
-| accent | Tinte de granate: respuesta al pasar el puntero sobre el envío y las flechas de galería. |
-| on-primary-muted | Rosa claro: texto auxiliar, metadatos y estados sobre granate. |
+| primary | Granate: marca, trazo del nombre, acentos en titulares, acciones, enlaces, selección y progreso de lectura. |
+| primary-foreground | Blanco: texto de las acciones con fondo granate, incluido el envío. |
+| accent | Tinte de granate: respuesta al pasar el puntero sobre las flechas de galería. |
 
 ### Neutral
 
@@ -173,10 +175,13 @@ La paleta combina un acento profundo con una base neutra clara. Los nombres de e
 | muted | Gris de superficie: bloque biográfico y marcos de proyectos. |
 | muted-foreground | Gris de lectura: descripciones, categorías, pies y metadatos. |
 | border | Gris de estructura: separadores de la cabecera, proyectos y controles de galería. |
+| contact-surface | Neutro suave: banda de contacto que mantiene la lectura en tinta. |
+| contact-placeholder | Gris de ayuda: texto de ejemplo en campos de contacto. |
+| contact-border | Gris de campo: línea inferior de los campos en reposo. |
 
 Las imágenes conservan sus propios colores. Los fondos específicos de sus marcos acompañan el contenido y no introducen acentos nuevos para la navegación.
 
-**The Single Accent Rule.** El granate reúne identidad, enlaces, selección y acción. También puede ocupar una superficie completa cuando los contenidos se invierten a claro.
+**The Single Accent Rule.** El granate reúne identidad, enlaces, selección y acción. En esta superficie se reserva a controles y detalles; la muestra inicial y el contacto conservan fondos neutros.
 
 ## Typography
 
@@ -187,17 +192,17 @@ La familia tiene una presencia sobria y legible. Los titulares emplean un espaci
 
 | Rol del frontmatter | Uso observado |
 | --- | --- |
-| display | Nombre del autor; tamaño fluido y segunda línea granate. |
+| display | Nombre del autor en tinta; tamaño fluido y trazo granate bajo la segunda línea. |
 | headline | Titulares de proyectos y biografía. |
 | title | Títulos de los artículos de proyecto. |
 | body | Descripciones de proyectos y texto de contacto. |
 | label | Navegación y acción principal. |
-| label-strong | Enlaces de texto y selección de Capturas/Video. |
+| label-strong | Enlaces de texto y selección de Imágenes/Video. |
 | contact-action | Texto del botón de envío. |
 | control | Campos y botones de contenido de la galería en reposo. |
 | caption | Metadatos y texto auxiliar de menor tamaño. |
 
-El texto introductorio usa un cuerpo más amplio (16px); la biografía usa un tamaño intermedio (15px). Las descripciones extensas de proyectos y biografía limitan su línea (65ch). El texto de la galería admite una línea más larga (72ch). El contador de imágenes usa números tabulares.
+El texto introductorio usa un cuerpo más amplio (16px); la biografía usa un tamaño intermedio (15px). El pie de la muestra inicial combina el nombre del producto (17px, peso 700), su categoría (11px) y el acceso a la galería (12px, peso 700). Las descripciones extensas de proyectos y biografía limitan su línea (65ch). El texto de la galería admite una línea más larga (72ch). El contador de imágenes usa números tabulares.
 
 En el rango intermedio, el nombre queda fijo (3.5rem). En móvil usa una escala fluida distinta (clamp(2.6rem, 9vw, 4rem)) y un interlineado (1.1). Los titulares de sección se fijan (29px) y los títulos de proyecto se compactan (21px). El contacto tiene su propia escala de titular (clamp(2rem, 4.2vw, 3rem)) y pasa a un tamaño fijo en móvil (36px).
 
@@ -207,7 +212,7 @@ En el rango intermedio, el nombre queda fijo (3.5rem). En móvil usa una escala 
 
 El contenedor central combina ancho máximo (1160px) y margen flexible. En escritorio ocupa el ancho de ventana menos un espacio total (96px), equivalente a un margen lateral (48px). La cabecera permanece visible y utiliza una altura amplia (88px); las anclas tienen una compensación de desplazamiento (100px).
 
-La composición inicial y el proyecto destacado emplean dos columnas con proporción (1.15fr / 1fr). La lista restante utiliza dos columnas iguales, con separación horizontal (40px) y vertical (56px). Los artículos permanecen abiertos. La biografía combina retrato y texto; el contacto combina texto y formulario sobre una banda granate.
+La composición inicial emplea dos columnas con proporción (1.05fr / 1fr); el proyecto destacado usa (1.15fr / 1fr). La muestra inicial coloca el producto sobre el neutro de la página y reúne título y acceso en un pie abierto, separado por una línea. La lista restante utiliza dos columnas iguales, con separación horizontal (40px) y vertical (56px). Los artículos permanecen abiertos. La biografía combina retrato y texto; el contacto combina texto y formulario sobre una banda neutra suave.
 
 El ritmo reúne distancias cortas para controles y metadatos, distancias medias para grupos y espacios amplios entre secciones. La lista de tecnologías fluye en líneas de texto y se envuelve según el espacio disponible.
 
@@ -223,7 +228,7 @@ La galería cabe en la ventana mediante ancho y altura limitados, con desplazami
 
 ## Elevation & Depth
 
-La página usa superficies planas: líneas finas separan regiones y los cambios de tono delimitan biografía, muestra y contacto. Los artículos no tienen sombra. La profundidad aparece en la galería, cuyo panel claro se superpone a un fondo negro atenuado (50%).
+La página usa superficies planas: líneas finas separan regiones y los cambios de tono delimitan biografía y contacto. La muestra inicial permanece abierta sobre el fondo de página. Los artículos no tienen sombra. La profundidad aparece en la galería, cuyo panel claro se superpone a un fondo negro atenuado (50%).
 
 La única sombra distintiva de esta superficie es modal: amplia, suave y desplazada hacia abajo. Su valor exacto está registrado en el sidecar como modal-gallery. El panel se abre y cierra con fundido y un cambio breve de escala; ese movimiento pertenece al diálogo.
 
@@ -231,11 +236,11 @@ La única sombra distintiva de esta superficie es modal: amplia, suave y desplaz
 
 ## Shapes
 
-Las esquinas suavizadas siguen la función: pequeñas en acciones, mayores en marcos de imagen y aún mayores en el panel modal y la muestra inicial. Los campos de contacto son rectos y se delimitan mediante una única línea inferior. Los separadores de sección son finos (1px).
+Las esquinas suavizadas siguen la función: pequeñas en acciones, mayores en marcos de imagen y aún mayores en el panel modal. La muestra inicial no lleva una caja exterior. Los campos de contacto son rectos y se delimitan mediante una única línea inferior. Los separadores de sección son finos (1px).
 
 La galería conserva esquinas propias en el área de imagen y video (8px) y en las miniaturas (4px). Las flechas de proyecto se apoyan en un círculo pequeño (38px); no definen la silueta del artículo.
 
-Los marcos de proyectos usan proporción panorámica (16:9), con una variante destacada de escritorio (16:10). El retrato tiene una proporción vertical (4:4.5) y pasa a cuadrado en móvil. Las imágenes principales de proyectos usan ajuste completo; el retrato y las miniaturas usan recorte.
+La muestra inicial utiliza una proporción más alta (1.08), que se aplana en móvil (1.25) con altura máxima (380px). Los marcos de proyectos usan proporción panorámica (16:9), con una variante destacada de escritorio (16:10). El retrato tiene una proporción vertical (4:4.5) y pasa a cuadrado en móvil. Las imágenes principales de proyectos usan ajuste completo; el retrato y las miniaturas usan recorte. El trazo bajo el nombre es una línea curva granate (3px), ligeramente inclinada.
 
 **The Open Article Rule.** La captura puede tener esquinas suaves; el artículo completo no necesita una caja exterior. Título, categoría, descripción y enlace permanecen fuera del marco de la imagen.
 
@@ -245,11 +250,11 @@ Los marcos de proyectos usan proporción panorámica (16:9), con una variante de
 
 La acción principal es un enlace granate con texto blanco, flecha y esquinas pequeñas. Su color se oscurece al pasar el puntero. Los enlaces de texto usan granate, peso fuerte y subrayado al pasar el puntero; los enlaces sociales dentro del contenido pueden usar tinta.
 
-El envío invierte la acción sobre la banda de contacto: blanco con texto granate. Al pasar el puntero adopta el tinte de granate. Durante el envío queda deshabilitado y atenuado, con icono de carga y el texto Enviando. Los iconos de la interfaz proceden de Lucide y acompañan texto o nombres accesibles.
+El envío usa fondo granate y texto blanco sobre la banda neutra de contacto; al pasar el puntero se oscurece. Durante el envío queda deshabilitado y atenuado, con icono de carga y el texto Enviando. Los iconos de la interfaz proceden de Lucide y acompañan texto o nombres accesibles. Las flechas de los accesos se desplazan ligeramente en la dirección de la acción al pasar el puntero (2px, 240ms).
 
 ### Navigation
 
-La cabecera reúne una marca textual y tres enlaces de ancla. La marca mezcla granate y tinta; Hablemos usa granate y una flecha. Los enlaces cambian a granate al pasar el puntero. La navegación permanece visible en móvil y ajusta su tamaño y sus huecos; en el ancho más estrecho se retira la flecha de Hablemos.
+La cabecera reúne una marca textual y tres enlaces de ancla. La marca mezcla granate y tinta; Hablemos usa granate y una flecha. Los enlaces cambian a granate al pasar el puntero; el subrayado se dibuja al pasar el puntero o recibir foco. Una línea granate fina (2px) indica el avance de lectura bajo la cabecera. La navegación permanece visible en móvil y ajusta su tamaño y sus huecos; en el ancho más estrecho se retira la flecha de Hablemos.
 
 El enlace Saltar al contenido se muestra al recibir foco. El pie reúne autoría y accesos sociales; su texto auxiliar se retira en móvil.
 
@@ -257,29 +262,35 @@ El enlace Saltar al contenido se muestra al recibir foco. El pie reúne autoría
 
 Cada artículo reúne captura, título, categoría, descripción y enlace. El reconocimiento, cuando existe, se presenta con un icono y texto granate. Los metadatos siguen al título; ambos pueden apilarse cuando el ancho se reduce. La captura enlazada tiene una flecha circular y un aumento de escala leve al pasar el puntero (1.025).
 
-La muestra inicial es un panel granate con la captura histórica de Konansa y un acceso a la galería. El proyecto destacado incorpora una captura del video, su descripción y la explicación de que su web ya no está disponible. La galería ocupa el lugar de ese destino externo.
+La muestra inicial presenta la experiencia móvil de Konansa sobre fondo neutro y un pie abierto con acceso a la galería. El proyecto destacado muestra el panel financiero, su descripción y la explicación de que su web ya no está disponible. Ambas imágenes son composiciones de presentación recompuestas a partir del material original, identificadas como tales en la galería. La captura histórica se conserva como tercera imagen. La galería ocupa el lugar del destino externo.
 
 ### Contact fields and feedback
 
-Los campos conservan etiquetas visibles de nombre, correo y mensaje. Nombre y correo se presentan juntos cuando el ancho lo permite; el mensaje ocupa la fila completa. Los campos son transparentes sobre granate, con texto y cursor blancos, una línea inferior rosada y texto de ayuda más claro. El foco vuelve blanca la línea inferior y añade una variación tonal tenue. El mensaje permite cambiar su altura.
+Los campos conservan etiquetas visibles de nombre, correo y mensaje. Nombre y correo se presentan juntos cuando el ancho lo permite; el mensaje ocupa la fila completa. Los campos son transparentes sobre el neutro de contacto, con etiquetas y texto en tinta, cursor granate y línea inferior gris. El texto de ejemplo usa el gris de ayuda. El foco vuelve granate la línea inferior, añade una línea de énfasis y una variación tonal tenue. El mensaje permite cambiar su altura. El titular de contacto conserva tinta y acentúa Hablemos en granate.
 
 El formulario conserva el envío existente mediante Formspree: validación de campos requeridos y correo, petición JSON, bloqueo de campos y acción durante la carga, confirmación o error visible y notificación mediante Sonner. El texto de estado utiliza una región de anuncio cortés. El éxito limpia los campos; el fallo conserva el mensaje para reintentar y ofrece LinkedIn como alternativa. El endpoint no forma parte del sistema visual.
 
 ### Project gallery
 
-El diálogo utiliza título, descripción, cierre con nombre accesible y controles de Capturas/Video. La vista inicial muestra imágenes locales; el reproductor se incorpora al elegir Video. Capturas y Video se indican mediante texto e icono; la selección añade granate, peso fuerte y línea inferior.
+El diálogo utiliza título, descripción, cierre con nombre accesible y controles de Imágenes/Video. La vista inicial muestra imágenes locales; el reproductor se incorpora al elegir Video. Imágenes y Video se indican mediante texto e icono; la selección añade granate, peso fuerte y línea inferior.
 
 La imagen activa se muestra completa en un marco panorámico y tiene pie con título, instante cuando existe y contador. El pie anuncia sus cambios de forma cortés. Las flechas anterior/siguiente recorren la colección de forma circular. La región de capturas admite las flechas izquierda/derecha del teclado.
 
 Las miniaturas seleccionan directamente una captura y marcan la activa con un contorno granate. Sus imágenes sí se recortan para la navegación. En escritorio miden (86 × 52px); en móvil (66 × 44px) y pueden desplazarse horizontalmente. Las flechas tienen altura táctil (44px) y llegan a un ancho (44px) en móvil.
 
-El diálogo conserva la gestión de foco de Radix, el cierre mediante Escape y la devolución de foco al acceso que lo abrió. Al cerrarlo vuelve a la primera captura y a la vista Capturas. La ausencia de imágenes tiene un mensaje propio. El enlace de fuente permite abrir el video original.
+El diálogo conserva la gestión de foco de Radix, el cierre mediante Escape y la devolución de foco al acceso que lo abrió. Al cerrarlo vuelve a la primera imagen y a la vista Imágenes. La ausencia de imágenes tiene un mensaje propio. El enlace de fuente permite abrir el video original.
 
-Konansa reúne cinco fotogramas locales WebP (1600 × 900px) del video m_L6e_WbdYo y la captura histórica de su página. La fuente, los instantes y la conservación de la imagen completa están registrados en [el README de capturas](public/imagenes/konansa/README.md); las etiquetas y textos alternativos residen en [los datos del portafolio](src/lib/portfolio.ts).
+La galería de Konansa reúne dos composiciones locales WebP, producto-v2.webp y panel-v2.webp, y la captura histórica de su página. Las composiciones mejoran la presentación a partir del material original y llevan la nota Composición de presentación. Los cinco fotogramas del video m_L6e_WbdYo permanecen como material fuente documentado en [el README de capturas](public/imagenes/konansa/README.md); las etiquetas y textos alternativos residen en [los datos del portafolio](src/lib/portfolio.ts).
 
-**The Contextual Focus Rule.** El foco usa granate sobre la base clara y blanco sobre superficies granate. Los campos de contacto señalan el foco con su línea inferior blanca.
+**The Contextual Focus Rule.** El foco usa granate sobre las superficies claras. Los campos de contacto señalan el foco con su línea inferior y cursor granate.
 
-Los cambios de color de acciones, navegación y enlaces sociales son breves (180ms, ease). Las imágenes de proyecto usan un cambio de escala más pausado (420ms, cubic-bezier(0.16, 1, 0.3, 1)); el diálogo usa una duración breve (200ms). La preferencia de movimiento reducido elimina el desplazamiento suave y reduce transiciones y animaciones a una duración mínima (0.01ms), con una sola repetición. Estas extensiones están registradas en el sidecar.
+Los cambios de color de acciones, navegación y enlaces sociales son breves (180ms, ease). Las imágenes de proyecto usan un cambio de escala más pausado (420ms, cubic-bezier(0.16, 1, 0.3, 1)); el diálogo usa una duración breve (200ms). El cambio de imagen en la galería emplea un fundido (280ms).
+
+La entrada inicial presenta el nombre (650ms) y la imagen de producto (850ms); el trazo granate se dibuja una sola vez (720ms). Durante la lectura, PortfolioMotion descubre los medios (620ms) y el texto marcado (460ms) con desplazamientos cortos y una curva común (cubic-bezier(0.16, 1, 0.3, 1)). El contenido base permanece visible y cada entrada se ejecuta una vez. El motor excluye controles interactivos y deja el contenido legible si no dispone de las APIs de animación.
+
+**The Purposeful Motion Rule.** El movimiento presenta contenido o confirma una interacción. Las entradas ocurren una vez, sin bucles, y la preferencia de movimiento reducido conserva una lectura estática.
+
+La preferencia de movimiento reducido elimina el desplazamiento suave, desactiva las entradas, el trazo y el fundido de galería, cancela las entradas gestionadas por PortfolioMotion y retira los desplazamientos de respuesta. Las transiciones restantes se reducen a una duración mínima (0.01ms), con una sola repetición. El progreso bajo la cabecera refleja el desplazamiento sin una animación autónoma. Estas extensiones están registradas en el sidecar.
 
 ## Do's and Don'ts
 
@@ -294,6 +305,8 @@ Los cambios de color de acciones, navegación y enlaces sociales son breves (180
 
 - Don't recortar las capturas principales para llenar su marco; el retrato y las miniaturas tienen una función distinta.
 - Don't encerrar cada proyecto en un panel con fondo y sombra; los artículos construidos se organizan mediante imagen, tipografía y espacio.
+- Don't convertir la muestra inicial o el contacto en grandes superficies granate; el acento se concentra en detalles y acciones.
+- Don't añadir animaciones en bucle ni ocultar contenido detrás de una entrada obligatoria.
 - Don't reemplazar las etiquetas de los campos ni los nombres accesibles de las flechas por iconos sin descripción.
 
 Las rampas tonales del sidecar son muestras generadas para el panel de diseño; no amplían la paleta usada por esta página.

@@ -16,10 +16,13 @@ Portafolio personal de desarrollo de software: presenta al autor, su formación,
 - Conservar la identidad, los contenidos profesionales, los enlaces sociales y el envío existente mediante Formspree.
 - Conservar íntegramente el bloque comentado «Para imagenes» como plantilla para futuras galerías.
 - Konansa ya no tiene una página disponible, según el usuario. Sustituir su enlace externo por una galería local con material del video https://www.youtube.com/watch?v=m_L6e_WbdYo.
+- La galería de Konansa presenta dos composiciones recompuestas a partir de material original, identificadas como composiciones de presentación, junto con la captura histórica y el acceso al video original.
 
 ## Brand Commitments
 
 El usuario solicita un rediseño minimalista y profesional e integrar rojo granate, con la muestra de color adjunta como referencia. Delega la elección de base clara u oscura y el criterio visual.
+
+En el refinamiento, conserva el granate de referencia (#800000) como acento en acciones y detalles. Prefiere superficies neutras amplias, mayor creatividad mediante movimiento sutil y una presentación más cuidada de las imágenes de Konansa. El movimiento respeta la preferencia de movimiento reducido y evita bucles.
 
 ## Evidence on Hand
 

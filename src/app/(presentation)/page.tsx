@@ -21,33 +21,32 @@ export default function PortfolioPage() {
           </div>
           <p className="availability"><span aria-hidden="true" />Disponible para proyectos</p>
         </div>
-        <div className="hero-showcase">
-          <div className="showcase-heading"><h2>Konansa</h2><span>Finanzas personales</span></div>
+        <figure className="hero-showcase">
           <div className="hero-preview">
-            <Image src="/imagenes/konansa.png" alt="Página original de Konansa, el asistente de finanzas personales" fill priority sizes="(max-width: 760px) 90vw, 480px" className="object-contain" />
+            <Image src="/imagenes/konansa/producto-v2.webp" alt="Presentación visual de Konansa con su interfaz móvil en modo claro y oscuro y su asistente financiero" fill priority sizes="(max-width: 760px) 90vw, 560px" className="object-contain" />
           </div>
-          <div className="showcase-footer">
-            <span>Una muestra de mi trabajo</span>
+          <figcaption className="showcase-footer">
+            <div className="showcase-heading"><h2>Konansa</h2><span>Finanzas personales</span></div>
             <ProjectModal title="Konansa" description="Un recorrido visual por el sistema de finanzas personales desarrollado durante mi estadía profesional en Wallavi." images={konansaImages} videoId={konansaVideoId} triggerLabel="Explorar Konansa" triggerClassName="showcase-link" />
-          </div>
-        </div>
+          </figcaption>
+        </figure>
       </section>
 
       <section id="projects" className="page-width projects-section" aria-labelledby="projects-title">
-        <div className="section-heading">
+        <div className="section-heading" data-reveal="copy">
           <h2 id="projects-title">Proyectos seleccionados<span>.</span></h2>
           <p>Soluciones web, datos y automatización.<br />Una mirada a lo que he construido.</p>
         </div>
 
         <article className="featured-project">
-          <div className="featured-image">
-            <Image src="/imagenes/konansa/presentacion.webp" alt="Konansa: su asistente financiero y la interfaz de la aplicación, capturados del video original" fill sizes="(max-width: 760px) 90vw, 650px" className="object-contain" />
+          <div className="featured-image" data-reveal="media">
+            <Image src="/imagenes/konansa/panel-v2.webp" alt="Composición visual del panel financiero de Konansa en laptop, tablet y teléfono" fill sizes="(max-width: 760px) 90vw, 650px" className="object-contain" />
           </div>
           <div className="featured-copy">
             <h3>Konansa</h3>
             <p className="project-category">Estadía profesional · Control financiero</p>
             <p className="project-description">Sistema integral de finanzas personales, desarrollado como proyecto de estadía profesional en <a href="https://www.wallavi.com/" target="_blank" rel="noopener noreferrer">Wallavi</a>.</p>
-            <p className="archive-note">La web ya no está disponible. El proyecto sigue aquí, en sus capturas y su video de presentación.</p>
+            <p className="archive-note">La web ya no está disponible. Explora el proyecto a través de sus presentaciones visuales y del video original.</p>
             <ProjectModal title="Konansa" description="Un recorrido visual por el sistema de finanzas personales desarrollado durante mi estadía profesional en Wallavi." images={konansaImages} videoId={konansaVideoId} triggerLabel="Ver galería y video" />
           </div>
         </article>
@@ -142,10 +141,10 @@ export default function PortfolioPage() {
       <section id="about" className="about-section" aria-labelledby="about-title">
         <div className="page-width about-layout">
           <figure className="portrait">
-            <div className="portrait-image"><Image src="/imagenes/yo.jpg" alt="José Luis Rivera Viera" fill sizes="(max-width: 760px) 280px, 320px" className="object-cover" /></div>
+            <div className="portrait-image" data-reveal="media"><Image src="/imagenes/yo.jpg" alt="José Luis Rivera Viera" fill sizes="(max-width: 760px) 280px, 320px" className="object-cover" /></div>
             <figcaption>José Luis Rivera Viera<span>Desarrollador de software</span></figcaption>
           </figure>
-          <div className="about-copy">
+          <div className="about-copy" data-reveal="copy">
             <h2 id="about-title">Un poco sobre mí<span>.</span></h2>
             <p>Estudiante de Ingeniería en Desarrollo y Gestión de Software, con formación como TSU en Desarrollo de Software Multiplataforma.</p>
             <p>Me enfoco en desarrollo web full-stack, con experiencia en proyectos reales utilizando Next.js, React y MySQL. Me apasiona crear soluciones eficientes y escalables en entornos empresariales.</p>
@@ -162,7 +161,7 @@ export default function PortfolioPage() {
       <section id="contact" className="contact-section" aria-labelledby="contact-title">
         <div className="page-width contact-layout">
           <div className="contact-copy">
-            <h2 id="contact-title">¿Tienes una idea?<br />Hablemos.</h2>
+            <h2 id="contact-title">¿Tienes una idea?<br /><span>Hablemos.</span></h2>
             <p>Cuéntame sobre tu proyecto.<br />Me gustaría conocerlo y darle forma contigo.</p>
             <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="contact-social">También me encuentras en LinkedIn <ArrowUpRight size={17} aria-hidden="true" /></a>
           </div>

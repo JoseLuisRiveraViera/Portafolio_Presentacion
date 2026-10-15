@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, Github, Linkedin } from "lucide-react";
 import { Toaster } from "@/components/ui/sonner";
 import { socialLinks } from "@/lib/portfolio";
+import { PortfolioMotion } from "@/components/portfolio-motion";
 
 export default function PresentationLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -29,6 +30,7 @@ export default function PresentationLayout({ children }: { children: React.React
         </div>
       </footer>
       <Toaster />
+      <PortfolioMotion />
     </div>
   );
 }

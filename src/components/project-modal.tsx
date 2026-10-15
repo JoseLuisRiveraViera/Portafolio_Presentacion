@@ -10,6 +10,7 @@ interface ProjectImage {
   alt: string;
   caption?: string;
   timestamp?: string;
+  note?: string;
 }
 
 interface ProjectModalProps {
@@ -48,7 +49,7 @@ export function ProjectModal({ title, description, images, videoId, triggerLabel
         {videoId && (
           <div className="gallery-tabs" aria-label="Contenido del proyecto">
             <button type="button" aria-pressed={view === "images"} onClick={() => setView("images")}>
-              <Images size={16} aria-hidden="true" /> Capturas
+              <Images size={16} aria-hidden="true" /> Imágenes
             </button>
             <button type="button" aria-pressed={view === "video"} onClick={() => setView("video")}>
               <Play size={16} aria-hidden="true" /> Video
@@ -58,7 +59,7 @@ export function ProjectModal({ title, description, images, videoId, triggerLabel
 
         {view === "images" ? (
           activeImage ? (
-            <div className="gallery-body" tabIndex={0} role="region" aria-label={`Capturas de ${title}. Usa las flechas izquierda y derecha para navegar.`} onKeyDown={(event) => {
+            <div className="gallery-body" tabIndex={0} role="region" aria-label={`Imágenes de ${title}. Usa las flechas izquierda y derecha para navegar.`} onKeyDown={(event) => {
               if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
                 event.preventDefault();
                 moveImage(event.key === "ArrowLeft" ? -1 : 1);
@@ -66,12 +67,13 @@ export function ProjectModal({ title, description, images, videoId, triggerLabel
             }}>
               <figure>
                 <div className="gallery-image">
-                  <Image src={activeImage.src} alt={activeImage.alt} fill sizes="(max-width: 800px) 94vw, 1000px" className="object-contain" />
+                  <Image key={activeImage.src} src={activeImage.src} alt={activeImage.alt} fill loading="eager" sizes="(max-width: 800px) 94vw, 1000px" className="object-contain gallery-frame" />
                 </div>
                 <figcaption className="gallery-caption" aria-live="polite" aria-atomic="true">
                   <span>
                     {activeImage.caption ?? `${title}, imagen ${activeIndex + 1}`}
                     {activeImage.timestamp && <span className="capture-time"> · Video {activeImage.timestamp}</span>}
+                    {activeImage.note && <span className="capture-time"> · {activeImage.note}</span>}
                   </span>
                   <span className="gallery-count">{activeIndex + 1} / {gallery.length}</span>
                 </figcaption>
@@ -81,7 +83,7 @@ export function ProjectModal({ title, description, images, videoId, triggerLabel
                   <button type="button" className="gallery-arrow" aria-label="Imagen anterior" onClick={() => moveImage(-1)}>
                     <ChevronLeft size={20} aria-hidden="true" />
                   </button>
-                  <div className="gallery-thumbnails" aria-label="Seleccionar captura">
+                  <div className="gallery-thumbnails" aria-label="Seleccionar imagen">
                     {gallery.map((image, index) => (
                       <button type="button" key={image.src} className="gallery-thumbnail" aria-label={`Ver ${image.caption ?? `imagen ${index + 1}`}`} aria-pressed={index === activeIndex} onClick={() => setActiveIndex(index)}>
                         <Image src={image.src} alt="" fill sizes="90px" className="object-cover" />
@@ -105,7 +107,7 @@ export function ProjectModal({ title, description, images, videoId, triggerLabel
 
         {videoId && (
           <div className="gallery-source">
-            <p>Capturas del video original y de la página conservada.</p>
+            <p>Presentaciones visuales y una captura histórica del proyecto.</p>
             <a href={`https://www.youtube.com/watch?v=${videoId}`} target="_blank" rel="noopener noreferrer">
               Ver en YouTube <ArrowUpRight size={15} aria-hidden="true" />
             </a>
