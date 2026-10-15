@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-14T22:02:13Z",
+  "title": "Design System: Portafolio de José Luis Rivera Viera",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Granate",
+        "tonalRamp": [
+          "oklch(15.00% 0.15458 29.23)",
+          "oklch(26.43% 0.15458 29.23)",
+          "oklch(37.86% 0.15458 29.23)",
+          "oklch(49.29% 0.15458 29.23)",
+          "oklch(60.71% 0.15458 29.23)",
+          "oklch(72.14% 0.15458 29.23)",
+          "oklch(83.57% 0.15458 29.23)",
+          "oklch(95.00% 0.15458 29.23)"
+        ]
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Blanco neutral",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ]
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "tonalRamp": [
+          "oklch(15.00% 0.00753 297.31)",
+          "oklch(26.43% 0.00753 297.31)",
+          "oklch(37.86% 0.00753 297.31)",
+          "oklch(49.29% 0.00753 297.31)",
+          "oklch(60.71% 0.00753 297.31)",
+          "oklch(72.14% 0.00753 297.31)",
+          "oklch(83.57% 0.00753 297.31)",
+          "oklch(95.00% 0.00753 297.31)"
+        ]
+      },
+      "primary-foreground": {
+        "role": "neutral",
+        "displayName": "Blanco sobre granate",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Gris de superficie",
+        "tonalRamp": [
+          "oklch(15.00% 0.00286 308.43)",
+          "oklch(26.43% 0.00286 308.43)",
+          "oklch(37.86% 0.00286 308.43)",
+          "oklch(49.29% 0.00286 308.43)",
+          "oklch(60.71% 0.00286 308.43)",
+          "oklch(72.14% 0.00286 308.43)",
+          "oklch(83.57% 0.00286 308.43)",
+          "oklch(95.00% 0.00286 308.43)"
+        ]
+      },
+      "muted-foreground": {
+        "role": "neutral",
+        "displayName": "Gris de lectura",
+        "tonalRamp": [
+          "oklch(15.00% 0.01301 302.90)",
+          "oklch(26.43% 0.01301 302.90)",
+          "oklch(37.86% 0.01301 302.90)",
+          "oklch(49.29% 0.01301 302.90)",
+          "oklch(60.71% 0.01301 302.90)",
+          "oklch(72.14% 0.01301 302.90)",
+          "oklch(83.57% 0.01301 302.90)",
+          "oklch(95.00% 0.01301 302.90)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Tinte de granate",
+        "tonalRamp": [
+          "oklch(15.00% 0.01304 17.39)",
+          "oklch(26.43% 0.01304 17.39)",
+          "oklch(37.86% 0.01304 17.39)",
+          "oklch(49.29% 0.01304 17.39)",
+          "oklch(60.71% 0.01304 17.39)",
+          "oklch(72.14% 0.01304 17.39)",
+          "oklch(83.57% 0.01304 17.39)",
+          "oklch(95.00% 0.01304 17.39)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Gris de estructura",
+        "tonalRamp": [
+          "oklch(15.00% 0.00580 308.39)",
+          "oklch(26.43% 0.00580 308.39)",
+          "oklch(37.86% 0.00580 308.39)",
+          "oklch(49.29% 0.00580 308.39)",
+          "oklch(60.71% 0.00580 308.39)",
+          "oklch(72.14% 0.00580 308.39)",
+          "oklch(83.57% 0.00580 308.39)",
+          "oklch(95.00% 0.00580 308.39)"
+        ]
+      },
+      "on-primary-muted": {
+        "role": "primary",
+        "displayName": "Rosa claro sobre granate",
+        "tonalRamp": [
+          "oklch(15.00% 0.04669 18.09)",
+          "oklch(26.43% 0.04669 18.09)",
+          "oklch(37.86% 0.04669 18.09)",
+          "oklch(49.29% 0.04669 18.09)",
+          "oklch(60.71% 0.04669 18.09)",
+          "oklch(72.14% 0.04669 18.09)",
+          "oklch(83.57% 0.04669 18.09)",
+          "oklch(95.00% 0.04669 18.09)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Nombre del autor",
+        "purpose": "Titular principal fluido."
+      },
+      "headline": {
+        "displayName": "Titular de sección",
+        "purpose": "Encabezados de proyectos y biografía."
+      },
+      "title": {
+        "displayName": "Título de proyecto",
+        "purpose": "Nombre dentro de los artículos abiertos."
+      },
+      "body": {
+        "displayName": "Descripción",
+        "purpose": "Texto de proyectos y contacto."
+      },
+      "label": {
+        "displayName": "Navegación y acción",
+        "purpose": "Enlaces de navegación y acción principal."
+      },
+      "label-strong": {
+        "displayName": "Enlace fuerte",
+        "purpose": "Acceso de texto y selector de contenido activo."
+      },
+      "contact-action": {
+        "displayName": "Acción de contacto",
+        "purpose": "Texto del envío."
+      },
+      "control": {
+        "displayName": "Control",
+        "purpose": "Campos y selectores de contenido en reposo."
+      },
+      "caption": {
+        "displayName": "Texto auxiliar",
+        "purpose": "Metadatos y pies breves."
+      }
+    },
+    "shadows": [
+      {
+        "name": "modal-gallery",
+        "value": "0 24px 80px #20101b33",
+        "purpose": "Superposición del panel de galería; los artículos de la página permanecen planos."
+      }
+    ],
+    "motion": [
+      {
+        "name": "color-response",
+        "value": "180ms ease",
+        "purpose": "Cambio de color o fondo de acción principal, navegación y enlaces sociales."
+      },
+      {
+        "name": "project-image-response",
+        "value": "420ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Aumento leve de escala de la captura enlazada."
+      },
+      {
+        "name": "project-image-hover-scale",
+        "value": "1.025",
+        "purpose": "Escala aplicada al pasar el puntero sobre la captura."
+      },
+      {
+        "name": "dialog-transition",
+        "value": "200ms",
+        "purpose": "Fundido y escala al abrir o cerrar el diálogo de Radix."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms; 1 iteration; scroll-behavior: auto",
+        "purpose": "Regla global para la preferencia de movimiento reducido."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "intermediate",
+        "value": "1050px",
+        "purpose": "Rango intermedio entre 761px y 1050px."
+      },
+      {
+        "name": "mobile",
+        "value": "760px",
+        "purpose": "Composición de una columna y galería compacta."
+      },
+      {
+        "name": "compact",
+        "value": "400px",
+        "purpose": "Navegación estrecha y formulario de una columna."
+      }
+    ],
+    "tonalRampGeneration": {
+      "purpose": "Muestras para el panel; no son colores adicionales usados por la página.",
+      "method": "Conversión sRGB a OKLCH y ocho pasos de luminosidad de 15% a 95%, manteniendo tono y croma."
+    }
+  },
+  "components": [
+    {
+      "name": "Acción principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Enlace granate de acceso a los proyectos, con flecha y respuesta de color.",
+      "html": "<a class=\"ds-primary\" href=\"#projects\">Ver proyectos <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m7 7 10 10\"/><path d=\"M17 7v10H7\"/></svg></a>",
+      "css": ".ds-primary{font-family:var(--font-manrope,Manrope),sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:24px;padding:14px 22px;background:var(--primary,#800000);color:var(--primary-foreground,#ffffff);font-size:13px;font-weight:600;line-height:1.65;border-radius:6px;text-decoration:none;transition:background 180ms ease}.ds-primary:hover{background:#650000}.ds-primary:focus-visible{outline:2px solid var(--primary,#800000);outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-primary{transition-duration:0.01ms!important;animation-duration:0.01ms!important;animation-iteration-count:1!important;}}"
+    },
+    {
+      "name": "Enlace de texto",
+      "kind": "button",
+      "refersTo": "link-text",
+      "description": "Acceso a la galería y a proyectos con subrayado al pasar el puntero.",
+      "html": "<button type=\"button\" class=\"ds-text-link\">Ver galería y video <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></button>",
+      "css": ".ds-text-link{font-family:var(--font-manrope,Manrope),sans-serif;display:inline-flex;align-items:center;gap:10px;padding:10px 0;border:0;background:transparent;color:var(--primary,#800000);font-size:13px;font-weight:700;line-height:1.65;cursor:pointer;text-underline-offset:5px}.ds-text-link:hover{text-decoration:underline}.ds-text-link:focus-visible{outline:2px solid var(--primary,#800000);outline-offset:5px;}"
+    },
+    {
+      "name": "Navegación principal",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Marca textual y anclas visibles en todos los anchos.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-wordmark\" href=\"#main\" aria-label=\"JLRV.dev, inicio\">JLRV<span>.dev</span></a><nav class=\"ds-nav\" aria-label=\"Navegación principal\"><a href=\"#projects\">Proyectos</a><a href=\"#about\">Sobre mí</a><a class=\"ds-nav-contact\" href=\"#contact\">Hablemos <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a></nav></header>",
+      "css": ".ds-header{font-family:var(--font-manrope,Manrope),sans-serif;height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px;background:var(--background,#fafafa);border-bottom:1px solid var(--border,#dfdde1);color:var(--foreground,#242327)}.ds-wordmark{font-size:23px;font-weight:800;letter-spacing:-0.035em;color:var(--primary,#800000);text-decoration:none}.ds-wordmark span{color:var(--foreground,#242327);font-weight:500}.ds-nav{display:flex;align-items:center;gap:36px;font-size:13px;font-weight:600;line-height:1.65}.ds-nav a{padding:10px 0;color:inherit;text-decoration:none;transition:color 180ms ease}.ds-nav a:hover{color:var(--primary,#800000)}.ds-nav .ds-nav-contact{display:flex;align-items:center;gap:10px;color:var(--primary,#800000)}.ds-header a:focus-visible{outline:2px solid var(--primary,#800000);outline-offset:5px;}@media(max-width:760px){.ds-header{height:72px;gap:12px}.ds-wordmark{font-size:21px}.ds-nav{gap:20px;font-size:12px}.ds-nav .ds-nav-contact{gap:6px}}@media(max-width:400px){.ds-wordmark{font-size:19px}.ds-nav{gap:13px;font-size:11px}.ds-nav-contact svg{display:none}}@media(prefers-reduced-motion:reduce){.ds-nav a{transition-duration:0.01ms!important;animation-duration:0.01ms!important;animation-iteration-count:1!important;}}"
+    },
+    {
+      "name": "Artículo de proyecto",
+      "kind": "card",
+      "refersTo": "project-article",
+      "description": "Bloque de contenido que acompaña una captura; artículo abierto sin panel ni sombra.",
+      "html": "<article class=\"ds-project\"><div class=\"ds-project-heading\"><h3>BlueSense</h3><span class=\"ds-project-category\">IoT · Calidad del agua</span></div><p class=\"ds-project-description\">Sistema IoT y web para monitorear la calidad del agua en ríos y ayudar a comunidades afectadas por la contaminación.</p><a class=\"ds-project-link\" href=\"https://bluesense.atwebpages.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Ver proyecto <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a></article>",
+      "css": ".ds-project{font-family:var(--font-manrope,Manrope),sans-serif;display:flex;flex-direction:column;min-width:0;color:var(--foreground,#242327)}.ds-project-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-top:22px}.ds-project-heading h3{margin:0;font-size:22px;font-weight:600;line-height:1.65;letter-spacing:-0.025em}.ds-project-category{font-size:12px;line-height:1.6;color:var(--muted-foreground,#66636b);text-align:right}.ds-project-description{margin:10px 0 0;max-width:65ch;font-size:14px;line-height:1.85;color:var(--muted-foreground,#66636b)}.ds-project-link{display:inline-flex;align-items:center;align-self:flex-start;gap:10px;padding:20px 0 10px;margin-top:auto;font-size:13px;font-weight:700;line-height:1.65;color:var(--primary,#800000);text-decoration:none;text-underline-offset:5px}.ds-project-link:hover{text-decoration:underline}.ds-project-link:focus-visible{outline:2px solid var(--primary,#800000);outline-offset:5px;}@media(min-width:761px) and (max-width:1050px){.ds-project-heading{align-items:flex-start;flex-direction:column;gap:4px}.ds-project-category{text-align:left}}@media(max-width:760px){.ds-project-heading{margin-top:16px;gap:12px;flex-wrap:wrap}.ds-project-heading h3{font-size:21px}.ds-project-category{font-size:11px;text-align:left}.ds-project-link{padding-top:12px}}@media(max-width:400px){.ds-project-heading{align-items:flex-start;flex-direction:column;gap:3px}}"
+    },
+    {
+      "name": "Campos de contacto",
+      "kind": "input",
+      "refersTo": "field-contact",
+      "description": "Etiqueta visible y línea inferior sobre una superficie granate.",
+      "html": "<div class=\"ds-contact-fields\"><div class=\"ds-field\"><label for=\"ds-name\">Nombre</label><input class=\"ds-contact-input\" id=\"ds-name\" name=\"name\" autocomplete=\"name\" placeholder=\"Tu nombre completo\" required></div><div class=\"ds-field\"><label for=\"ds-message\">Mensaje</label><textarea class=\"ds-contact-input ds-contact-textarea\" id=\"ds-message\" name=\"message\" placeholder=\"Escribe tu mensaje aquí...\" required></textarea></div></div>",
+      "css": ".ds-contact-fields{font-family:var(--font-manrope,Manrope),sans-serif;background:var(--primary,#800000);color:var(--primary-foreground,#ffffff)}.ds-field{margin-bottom:24px}.ds-field label{display:block;font-size:12px;font-weight:500;line-height:1.65;margin-bottom:8px}.ds-contact-input{font-family:var(--font-manrope,Manrope),sans-serif;width:100%;height:46px;padding:10px 0;border:0;border-bottom:1px solid #bc7373;border-radius:0;background:transparent;color:var(--primary-foreground,#ffffff);font-size:13px;line-height:1.65;box-shadow:none;caret-color:#ffffff;transition:color 150ms,box-shadow 150ms}.ds-contact-input::placeholder{color:#ecc0c0;opacity:1}.ds-contact-input:focus-visible{outline:0;box-shadow:none;border-color:#ffffff;background:#ffffff08}.ds-contact-input:disabled{opacity:.5;cursor:not-allowed;pointer-events:none}.ds-contact-textarea{min-height:98px;height:98px;resize:vertical;padding-top:8px}@media(prefers-reduced-motion:reduce){.ds-contact-input{transition-duration:0.01ms!important;animation-duration:0.01ms!important;animation-iteration-count:1!important;}}"
+    },
+    {
+      "name": "Acción de contacto",
+      "kind": "button",
+      "refersTo": "button-contact",
+      "description": "Acción blanca sobre granate; estado deshabilitado atenuado durante el envío.",
+      "html": "<div class=\"ds-contact-action\"><button class=\"ds-submit\" type=\"button\">Enviar mensaje <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m22 2-7 20-4-9-9-4Z\"/><path d=\"M22 2 11 13\"/></svg></button></div>",
+      "css": ".ds-contact-action{font-family:var(--font-manrope,Manrope),sans-serif;background:var(--primary,#800000);color:var(--primary-foreground,#ffffff)}.ds-submit{font-family:var(--font-manrope,Manrope),sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:30px;height:46px;padding:8px 22px;border:0;background:#ffffff;color:var(--primary,#800000);font-size:12px;font-weight:700;line-height:1.65;border-radius:6px;box-shadow:none;cursor:pointer;transition:all 150ms}.ds-submit svg{margin-left:8px;flex-shrink:0}.ds-submit:hover{background:var(--accent,#f5e9e9)}.ds-submit:focus-visible{outline:2px solid #ffffff;outline-offset:5px;}.ds-submit:disabled{cursor:wait;opacity:.65;pointer-events:none}@media(prefers-reduced-motion:reduce){.ds-submit{transition-duration:0.01ms!important;animation-duration:0.01ms!important;animation-iteration-count:1!important;}}"
+    },
+    {
+      "name": "Capturas y video",
+      "kind": "custom",
+      "refersTo": "gallery-tab",
+      "description": "Selección de contenido mediante texto, icono, color y línea inferior.",
+      "html": "<div class=\"ds-gallery-tabs\" aria-label=\"Contenido del proyecto\"><button type=\"button\" aria-pressed=\"true\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m22 15-4-4a2 2 0 0 0-2.8 0L9 17\"/><path d=\"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2\"/><circle cx=\"13\" cy=\"9\" r=\"2\"/><rect x=\"8\" y=\"6\" width=\"14\" height=\"16\" rx=\"2\"/></svg> Capturas</button><button type=\"button\" aria-pressed=\"false\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><polygon points=\"6 3 20 12 6 21 6 3\"/></svg> Video</button></div>",
+      "css": ".ds-gallery-tabs{font-family:var(--font-manrope,Manrope),sans-serif;display:flex;align-items:center;gap:24px;border-bottom:1px solid var(--border,#dfdde1)}.ds-gallery-tabs button{font-family:var(--font-manrope,Manrope),sans-serif;display:inline-flex;align-items:center;gap:8px;padding:10px 0 12px;background:transparent;color:var(--muted-foreground,#66636b);font-size:13px;font-weight:400;line-height:1.65;border:0;border-bottom:2px solid transparent;cursor:pointer}.ds-gallery-tabs button[aria-pressed=true]{color:var(--primary,#800000);border-bottom-color:var(--primary,#800000);font-weight:700}.ds-gallery-tabs button:hover{color:var(--primary,#800000)}.ds-gallery-tabs button:focus-visible{outline:2px solid var(--primary,#800000);outline-offset:5px;}"
+    },
+    {
+      "name": "Flechas de galería",
+      "kind": "button",
+      "refersTo": "gallery-arrow",
+      "description": "Controles anterior/siguiente con nombre accesible y foco visible.",
+      "html": "<div class=\"ds-gallery-arrows\"><button class=\"ds-gallery-arrow\" type=\"button\" aria-label=\"Imagen anterior\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m15 18-6-6 6-6\"/></svg></button><button class=\"ds-gallery-arrow\" type=\"button\" aria-label=\"Imagen siguiente\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"/></svg></button></div>",
+      "css": ".ds-gallery-arrows{display:flex;gap:14px}.ds-gallery-arrow{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:40px;height:44px;padding:0;background:transparent;border:1px solid var(--border,#dfdde1);border-radius:6px;color:var(--primary,#800000);cursor:pointer}.ds-gallery-arrow:hover{background:var(--accent,#f5e9e9);border-color:var(--primary,#800000)}.ds-gallery-arrow:focus-visible{outline:2px solid var(--primary,#800000);outline-offset:5px;}@media(max-width:760px){.ds-gallery-arrows{gap:8px}.ds-gallery-arrow{width:44px}}"
+    },
+    {
+      "name": "Panel de galería",
+      "kind": "custom",
+      "refersTo": "gallery-panel",
+      "description": "Contenedor modal y cabecera; la página principal conserva su tratamiento plano.",
+      "html": "<section class=\"ds-gallery-panel\" aria-labelledby=\"ds-gallery-title\"><div class=\"ds-gallery-header\"><h2 class=\"ds-gallery-title\" id=\"ds-gallery-title\">Konansa</h2><p class=\"ds-gallery-description\">Un recorrido visual por el sistema de finanzas personales desarrollado durante mi estadía profesional en Wallavi.</p></div></section>",
+      "css": ".ds-gallery-panel{font-family:var(--font-manrope,Manrope),sans-serif;width:calc(100% - 40px);max-width:1040px;max-height:calc(100dvh - 40px);overflow-y:auto;padding:30px;border:0;border-radius:16px;background:var(--background,#fafafa);color:var(--foreground,#242327);box-shadow:0 24px 80px #20101b33}.ds-gallery-header{text-align:left;padding-right:34px;display:flex;flex-direction:column;gap:10px}.ds-gallery-title{margin:0;font-size:27px;font-weight:600;line-height:1;letter-spacing:-0.03em}.ds-gallery-description{margin:0;max-width:72ch;font-size:13px;line-height:1.7;color:var(--muted-foreground,#66636b)}@media(max-width:760px){.ds-gallery-panel{width:calc(100% - 24px);max-height:calc(100dvh - 24px);padding:20px}.ds-gallery-title{font-size:24px}.ds-gallery-description{font-size:12px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Documentación de ingeniería",
+    "overview": "El sistema construido presenta el trabajo como un archivo abierto: fondo claro, tinta neutra, imágenes de proyectos y granate para la identidad y la interacción. La composición tiene aire y una jerarquía precisa, coherentes con el carácter minimalista y profesional registrado en PRODUCT.md.\n\nManrope sostiene toda la superficie, desde el nombre de gran tamaño hasta los metadatos. La separación se obtiene con espacio, líneas finas y cambios de tono. Las capturas principales mantienen el artefacto completo; el retrato y las miniaturas tienen el recorte específico que requiere su función.\n\nLa página permanece plana durante la lectura. La galería introduce una capa modal delimitada por un fondo atenuado y una sombra difusa. El granate también forma superficies completas para la muestra inicial y el contacto, con texto y controles claros sobre él.",
+    "keyCharacteristics": [
+      "Un solo acento granate sobre neutros claros.",
+      "Una sola familia tipográfica y jerarquía por tamaño, peso y espaciado.",
+      "Artículos abiertos con capturas completas y metadatos próximos al proyecto.",
+      "Controles discretos, foco visible y estados de envío explícitos."
+    ],
+    "rules": [
+      {
+        "name": "The Complete Image Rule",
+        "body": "Las imágenes principales de proyectos se muestran completas. El recorte queda limitado al retrato y a las miniaturas de navegación.",
+        "section": "overview"
+      },
+      {
+        "name": "The Single Accent Rule",
+        "body": "El granate reúne identidad, enlaces, selección y acción. También puede ocupar una superficie completa cuando los contenidos se invierten a claro.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Typeface Rule",
+        "body": "Manrope cubre titulares, texto y controles. La jerarquía cambia con tamaño, peso y espaciado, sin introducir una segunda familia.",
+        "section": "typography"
+      },
+      {
+        "name": "The Responsive Flow Rule",
+        "body": "Cuando el ancho deja de sostener dos columnas, los contenidos pasan a una secuencia vertical y conservan su orden de lectura.",
+        "section": "layout"
+      },
+      {
+        "name": "The Modal Depth Rule",
+        "body": "La sombra expresa la superposición de la galería. Los proyectos de la página se separan con espacio, líneas y tono.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Open Article Rule",
+        "body": "La captura puede tener esquinas suaves; el artículo completo no necesita una caja exterior. Título, categoría, descripción y enlace permanecen fuera del marco de la imagen.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Contextual Focus Rule",
+        "body": "El foco usa granate sobre la base clara y blanco sobre superficies granate. Los campos de contacto señalan el foco con su línea inferior blanca.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do conservar Manrope, los neutros claros y el granate como vocabulario de esta superficie.",
+      "Do mostrar las capturas principales completas, con texto alternativo y una descripción próxima.",
+      "Do mantener el foco visible, los nombres accesibles de los controles y los mensajes de estado del formulario.",
+      "Do conservar la adaptación de columnas, el desplazamiento de miniaturas y la preferencia de movimiento reducido."
+    ],
+    "donts": [
+      "Don't recortar las capturas principales para llenar su marco; el retrato y las miniaturas tienen una función distinta.",
+      "Don't encerrar cada proyecto en un panel con fondo y sombra; los artículos construidos se organizan mediante imagen, tipografía y espacio.",
+      "Don't reemplazar las etiquetas de los campos ni los nombres accesibles de las flechas por iconos sin descripción."
+    ]
+  }
+}

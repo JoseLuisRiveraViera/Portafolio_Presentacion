@@ -1,55 +1,34 @@
 import Link from "next/link";
-import { Code2, Github, Linkedin } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Toaster } from "@/components/ui/sonner"; // <--- CAMBIO AQUÍ: Importamos desde "sonner"
+import { ArrowUpRight, Github, Linkedin } from "lucide-react";
+import { Toaster } from "@/components/ui/sonner";
+import { socialLinks } from "@/lib/portfolio";
 
-export default function PresentationLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function PresentationLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen flex-col">
-      {/* ... Navbar igual ... */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-14 items-center justify-between px-4">
-          <div className="flex items-center gap-2 font-bold text-xl">
-            <Code2 className="h-6 w-6" />
-            <span>JLRV.dev</span>
-          </div>
-          <nav className="hidden md:flex gap-6 text-sm font-medium">
-            <Link href="#about" className="transition-colors hover:text-primary">Sobre mí</Link>
-            <Link href="#projects" className="transition-colors hover:text-primary">Proyectos</Link>
-            <Link href="#contact" className="transition-colors hover:text-primary">Contacto</Link>
+    <div className="portfolio">
+      <a href="#main" className="skip-link">Saltar al contenido</a>
+      <header className="site-header">
+        <div className="page-width header-inner">
+          <Link href="/" className="wordmark" aria-label="JLRV.dev, inicio">JLRV<span>.dev</span></Link>
+          <nav className="main-nav" aria-label="Navegación principal">
+            <Link href="#projects">Proyectos</Link>
+            <Link href="#about">Sobre mí</Link>
+            <Link href="#contact" className="nav-contact">Hablemos <ArrowUpRight size={16} aria-hidden="true" /></Link>
           </nav>
-          <Button asChild variant="outline" size="sm">
-            <Link href="#contact">Contáctame</Link>
-          </Button>
         </div>
       </header>
-
-      <main className="flex-1">
-        {children}
-      </main>
-
-      {/* ... Footer igual ... */}
-      <footer className="border-t py-6 md:py-0 bg-background">
-        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row px-4">
-          <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            &copy; 2025 José Luis Rivera Viera. Todos los derechos reservados.
-          </p>
-          <div className="flex gap-4">
-            <Link href="https://github.com/JoseLuisRiveraViera" target="_blank" className="text-muted-foreground hover:text-foreground">
-              <Github className="h-5 w-5" />
-            </Link>
-            <Link href="https://www.linkedin.com/in/jose-luis-rivera-viera/" target="_blank" className="text-muted-foreground hover:text-foreground">
-              <Linkedin className="h-5 w-5" />
-            </Link>
+      <main id="main">{children}</main>
+      <footer className="site-footer">
+        <div className="page-width footer-inner">
+          <p>© {new Date().getFullYear()} José Luis Rivera Viera</p>
+          <span className="footer-note">Desarrollo de software, con propósito.</span>
+          <div className="social-links">
+            <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub de José Luis (abre en una nueva pestaña)"><Github size={19} aria-hidden="true" /></a>
+            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de José Luis (abre en una nueva pestaña)"><Linkedin size={19} aria-hidden="true" /></a>
           </div>
         </div>
       </footer>
-
-      <Toaster /> {/* <--- Este componente ahora usa Sonner internamente */}
+      <Toaster />
     </div>
   );
 }

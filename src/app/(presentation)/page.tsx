@@ -1,227 +1,71 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Github, Linkedin } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Award, Github, Linkedin } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
-import { ProjectModal } from "@/components/project-modal"; 
+import { ProjectModal } from "@/components/project-modal";
+import { konansaImages, konansaVideoId, projects, socialLinks } from "@/lib/portfolio";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+const technologies = ["PHP", "JavaScript", "Next.js", "React", "Laravel", "MySQL", "PostgreSQL", "Tailwind CSS"];
 
 export default function PortfolioPage() {
   return (
     <>
-      {/* --- HERO SECTION --- */}
-      <section className="container mx-auto py-24 px-4 md:py-32 flex flex-col items-center text-center space-y-4">
-          <div className="rounded-full bg-muted p-2 mb-4">
-            <span className="text-xs font-medium px-2 text-muted-foreground">Disponible para proyectos</span>
+      <section className="page-width hero" aria-labelledby="hero-title">
+        <div className="hero-copy">
+          <h1 id="hero-title">José Luis{" "}<span>Rivera Viera.</span></h1>
+          <p className="hero-role">Desarrollador de software multiplataforma.</p>
+          <p className="hero-description">Transformo ideas en soluciones web robustas y escalables, con atención a lo que realmente importa.</p>
+          <div className="hero-actions">
+            <Link href="#projects" className="primary-link">Ver proyectos <ArrowDownRight size={19} aria-hidden="true" /></Link>
+            <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-link neutral-link"><Github size={18} aria-hidden="true" /> GitHub</a>
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight lg:text-7xl">
-            José Luis <span className="text-primary">Rivera Viera</span>
-          </h1>
-          <p className="max-w-[700px] text-lg text-muted-foreground md:text-xl">
-            Desarrollador de Software Multiplataforma. Especialista en transformar ideas en soluciones web robustas y escalables.
-          </p>
-          <div className="flex gap-4 mt-6">
-            <Button asChild size="lg">
-              <Link href="#projects">Ver Proyectos</Link>
-            </Button>
-            <Button variant="ghost" size="lg" asChild>
-              <Link href="https://github.com/JoseLuisRiveraViera" target="_blank">
-                <Github className="mr-2 h-4 w-4" /> GitHub
-              </Link>
-            </Button>
+          <p className="availability"><span aria-hidden="true" />Disponible para proyectos</p>
+        </div>
+        <div className="hero-showcase">
+          <div className="showcase-heading"><h2>Konansa</h2><span>Finanzas personales</span></div>
+          <div className="hero-preview">
+            <Image src="/imagenes/konansa.png" alt="Página original de Konansa, el asistente de finanzas personales" fill priority sizes="(max-width: 760px) 90vw, 480px" className="object-contain" />
           </div>
+          <div className="showcase-footer">
+            <span>Una muestra de mi trabajo</span>
+            <ProjectModal title="Konansa" description="Un recorrido visual por el sistema de finanzas personales desarrollado durante mi estadía profesional en Wallavi." images={konansaImages} videoId={konansaVideoId} triggerLabel="Explorar Konansa" triggerClassName="showcase-link" />
+          </div>
+        </div>
       </section>
 
-      {/* --- SOBRE MÍ --- */}
-      <section id="about" className="container mx-auto py-16 px-4 md:py-24 bg-muted/50 rounded-3xl my-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Sobre Mí</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Estudiante de Ingeniería en Desarrollo y Gestión de Software con formación como TSU en Desarrollo de Software Multiplataforma. 
-                Enfocado en desarrollo web full-stack, con experiencia en proyectos reales utilizando Next.js, React y MySQL. 
-                Apasionado por crear soluciones eficientes y escalables en entornos empresariales.
-              </p>
-              
-              <div className="flex flex-wrap gap-2">
-                {["PHP", "JavaScript", "Next.js", "React", "Laravel", "MySQL", "PostgreSQL", "Tailwind CSS"].map((skill) => (
-                  <span key={skill} className="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold bg-primary text-primary-foreground shadow hover:bg-primary/80">
-                    {skill}
-                  </span>
-                ))}
-              </div>
+      <section id="projects" className="page-width projects-section" aria-labelledby="projects-title">
+        <div className="section-heading">
+          <h2 id="projects-title">Proyectos seleccionados<span>.</span></h2>
+          <p>Soluciones web, datos y automatización.<br />Una mirada a lo que he construido.</p>
+        </div>
 
-              <div className="flex gap-4 pt-4">
-                <Button variant="outline" asChild>
-                  <Link href="https://www.linkedin.com/in/jose-luis-rivera-viera/" target="_blank">
-                    <Linkedin className="mr-2 h-4 w-4 text-blue-600" /> LinkedIn
-                  </Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link href="https://github.com/JoseLuisRiveraViera" target="_blank">
-                    <Github className="mr-2 h-4 w-4 text-black-600" /> Github
-                  </Link>
-                </Button>
-              </div>
-            </div>
-            <div className="relative mx-auto w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-8 border-background shadow-xl">
-               <Image 
-                src="/imagenes/yo.jpg" 
-                alt="José Luis Rivera Viera" 
-                fill 
-                className="object-cover"
-              />
-            </div>
+        <article className="featured-project">
+          <div className="featured-image">
+            <Image src="/imagenes/konansa/presentacion.webp" alt="Konansa: su asistente financiero y la interfaz de la aplicación, capturados del video original" fill sizes="(max-width: 760px) 90vw, 650px" className="object-contain" />
           </div>
-      </section>
+          <div className="featured-copy">
+            <h3>Konansa</h3>
+            <p className="project-category">Estadía profesional · Control financiero</p>
+            <p className="project-description">Sistema integral de finanzas personales, desarrollado como proyecto de estadía profesional en <a href="https://www.wallavi.com/" target="_blank" rel="noopener noreferrer">Wallavi</a>.</p>
+            <p className="archive-note">La web ya no está disponible. El proyecto sigue aquí, en sus capturas y su video de presentación.</p>
+            <ProjectModal title="Konansa" description="Un recorrido visual por el sistema de finanzas personales desarrollado durante mi estadía profesional en Wallavi." images={konansaImages} videoId={konansaVideoId} triggerLabel="Ver galería y video" />
+          </div>
+        </article>
 
-      {/* --- PROYECTOS --- */}
-      <section id="projects" className="container mx-auto py-16 px-4 md:py-24">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-12 text-center">Proyectos Destacados</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* PROYECTO 1: BlueSense */}
-            <Card className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="relative w-full h-48 bg-muted">
-                 <Image 
-                  src="/imagenes/BlueSense.png" 
-                  alt="BlueSense" 
-                  fill 
-                  className="object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>BlueSense</CardTitle>
-                <CardDescription>Mención Honorífica en Hackbox Hackathon</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1">
-                <p className="text-sm text-muted-foreground">
-                  Sistema IoT y web diseñado para monitorear la calidad del agua en ríos, ayudando a comunidades afectadas por la contaminación.
-                </p>
-              </CardContent>
-              <CardFooter>
-                <Button asChild className="w-full">
-                  <Link href="https://bluesense.atwebpages.com/" target="_blank">Ver Proyecto</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-            {/* PROYECTO 2: Ramírez Plaza */}
-            <Card className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="relative w-full h-48 bg-muted">
-                 <Image 
-                  src="/imagenes/RamirezPlaza.png" 
-                  alt="Ramírez Plaza" 
-                  fill 
-                  className="object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Ramírez Plaza</CardTitle>
-                <CardDescription>Desarrollo Web Comercial</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1">
-                <p className="text-sm text-muted-foreground">
-                  Plataforma digital para la promoción y localización de negocios dentro de la plaza comercial Ramírez Plaza.
-                </p>
-              </CardContent>
-              <CardFooter>
-                <Button asChild className="w-full">
-                  <Link href="https://joseluisriveraviera.github.io/Ram-rez-Plaza/" target="_blank">Ver Proyecto</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-            
-            {/* PROYECTO 3: Konansa */}
-            <Card className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="relative w-full h-48 bg-muted">
-                 <Image 
-                  src="/imagenes/konansa.png" 
-                  alt="Konansa" 
-                  fill 
-                  className="object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Konansa</CardTitle>
-                <CardDescription>Control Financiero</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1">
-              <p className="text-sm text-muted-foreground">
-               Sistema integral de finanzas personales: Proyecto de estadía profesional en {' '}
-                <a 
-                  href="https://www.wallavi.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="font-medium text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
-                >
-                  Wallavi
-                </a>.
-              </p>
-              </CardContent>
-              <CardFooter>
-                <Button asChild className="w-full">
-                  <Link href="https://konansa.mx/" target="_blank">Ver Proyecto</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-                 {/* PROYECTO 4: Nova-Sense */}
-            <Card className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="relative w-full h-48 bg-muted">
-                 <Image 
-                  src="/imagenes/novasense-presentation.png" 
-                  alt="NovaSense" 
-                  fill 
-                  className="object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Nova-Sense</CardTitle>
-                <CardDescription>Panel de Monitoreo sobre calidad del agua</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1">
-                <p className="text-sm text-muted-foreground">
-                  Sistema integral de Monitoreo con datos sobre calidad del agua en gráficos en tiempo real.
-                </p>
-              </CardContent>
-              <CardFooter>
-                <Button asChild className="w-full">
-                  <Link href="https://nova-sense.vercel.app/presentation" target="_blank">Ver Proyecto</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-            {/* PROYECTO 5: Echo */}
-            <Card className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="relative w-full h-48 bg-muted">
-                 <Image 
-                  src="/imagenes/echo-presentationn.png" 
-                  alt="echo" 
-                  fill 
-                  className="object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Echo</CardTitle>
-                <CardDescription>Automatización de Trabajo</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1">
-                <p className="text-sm text-muted-foreground">
-                  Elimine el trabajo en la sombra con la automatización inteligente.
-                </p>
-              </CardContent>
-              <CardFooter>
-                <Button asChild className="w-full">
-                  <Link href="https://echo-omega-lovat.vercel.app/" target="_blank">Ver Proyecto</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-      {/* Para imagenes
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <article className="project" key={project.title}>
+              <a href={project.href} target="_blank" rel="noopener noreferrer" className="project-image" aria-label={`Ver ${project.title} (abre en una nueva pestaña)`}>
+                <Image src={project.image} alt={project.alt} fill sizes="(max-width: 760px) 90vw, 560px" className="object-contain" />
+                <span className="project-image-arrow" aria-hidden="true"><ArrowUpRight size={20} /></span>
+              </a>
+              <div className="project-title-row"><h3>{project.title}</h3><span className="project-category">{project.category}</span></div>
+              <p className="project-description">{project.description}</p>
+              {project.recognition && <p className="project-recognition"><Award size={16} aria-hidden="true" />{project.recognition}</p>}
+              <a href={project.href} target="_blank" rel="noopener noreferrer" className="text-link" aria-label={`Ver proyecto ${project.title} (abre en una nueva pestaña)`}>Ver proyecto <ArrowUpRight size={17} aria-hidden="true" /></a>
+            </article>
+          ))}
+          {/* Para imagenes
             {/* --- NUEVO PROYECTO 4 (CON MODAL) --- 
             <Card className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow">
               <div className="relative w-full h-48 bg-muted">
@@ -292,23 +136,38 @@ export default function PortfolioPage() {
                 />
               </CardFooter>
             </Card> */}
-
-          </div>
+        </div>
       </section>
 
-      {/* --- CONTACTO --- */}
-      <section id="contact" className="container mx-auto py-16 px-4 md:py-24 max-w-2xl">
-          <Card>
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl">Ponte en Contacto</CardTitle>
-              <CardDescription>
-                ¿Tienes un proyecto en mente? Envíame un mensaje y hablemos.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ContactForm />
-            </CardContent>
-          </Card>
+      <section id="about" className="about-section" aria-labelledby="about-title">
+        <div className="page-width about-layout">
+          <figure className="portrait">
+            <div className="portrait-image"><Image src="/imagenes/yo.jpg" alt="José Luis Rivera Viera" fill sizes="(max-width: 760px) 280px, 320px" className="object-cover" /></div>
+            <figcaption>José Luis Rivera Viera<span>Desarrollador de software</span></figcaption>
+          </figure>
+          <div className="about-copy">
+            <h2 id="about-title">Un poco sobre mí<span>.</span></h2>
+            <p>Estudiante de Ingeniería en Desarrollo y Gestión de Software, con formación como TSU en Desarrollo de Software Multiplataforma.</p>
+            <p>Me enfoco en desarrollo web full-stack, con experiencia en proyectos reales utilizando Next.js, React y MySQL. Me apasiona crear soluciones eficientes y escalables en entornos empresariales.</p>
+            <h3 className="technology-heading">Tecnologías con las que trabajo</h3>
+            <ul className="technology-list">{technologies.map((technology) => <li key={technology}>{technology}</li>)}</ul>
+            <div className="about-socials">
+              <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-link neutral-link"><Linkedin size={18} aria-hidden="true" /> LinkedIn <ArrowUpRight size={15} aria-hidden="true" /></a>
+              <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-link neutral-link"><Github size={18} aria-hidden="true" /> GitHub <ArrowUpRight size={15} aria-hidden="true" /></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="contact-section" aria-labelledby="contact-title">
+        <div className="page-width contact-layout">
+          <div className="contact-copy">
+            <h2 id="contact-title">¿Tienes una idea?<br />Hablemos.</h2>
+            <p>Cuéntame sobre tu proyecto.<br />Me gustaría conocerlo y darle forma contigo.</p>
+            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="contact-social">También me encuentras en LinkedIn <ArrowUpRight size={17} aria-hidden="true" /></a>
+          </div>
+          <ContactForm />
+        </div>
       </section>
     </>
   );
