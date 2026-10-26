@@ -3,33 +3,39 @@ import { ArrowUpRight, Github, Linkedin } from "lucide-react";
 import { Toaster } from "@/components/ui/sonner";
 import { socialLinks } from "@/lib/portfolio";
 import { PortfolioMotion } from "@/components/portfolio-motion";
+import { SitePreferences } from "@/components/site-preferences";
+import { getLocale } from "@/lib/server-locale";
+import { messages } from "@/lib/messages";
 
-export default function PresentationLayout({ children }: { children: React.ReactNode }) {
+export default async function PresentationLayout({ children }: { children: React.ReactNode }) {
+  const locale = await getLocale();
+  const t = messages[locale];
   return (
     <div className="portfolio">
-      <a href="#main" className="skip-link">Saltar al contenido</a>
+      <a href="#main" className="skip-link">{t.navigation.skip}</a>
       <header className="site-header">
         <div className="page-width header-inner">
-          <Link href="/" className="wordmark" aria-label="JLRV.dev, inicio">JLRV<span>.dev</span></Link>
-          <nav className="main-nav" aria-label="Navegación principal">
-            <Link href="#projects">Proyectos</Link>
-            <Link href="#about">Sobre mí</Link>
-            <Link href="#contact" className="nav-contact">Hablemos <ArrowUpRight size={16} aria-hidden="true" /></Link>
+          <Link href="/" className="wordmark" aria-label={t.navigation.home}>JLRV<span>.dev</span></Link>
+          <nav className="main-nav" aria-label={t.navigation.label}>
+            <Link href="#projects">{t.navigation.projects}</Link>
+            <Link href="#about">{t.navigation.about}</Link>
+            <Link href="#contact" className="nav-contact">{t.navigation.contact} <ArrowUpRight size={16} aria-hidden="true" /></Link>
           </nav>
+          <SitePreferences />
         </div>
       </header>
       <main id="main">{children}</main>
       <footer className="site-footer">
         <div className="page-width footer-inner">
           <p>© {new Date().getFullYear()} José Luis Rivera Viera</p>
-          <span className="footer-note">Desarrollo de software, con propósito.</span>
+          <span className="footer-note">{t.footer}</span>
           <div className="social-links">
-            <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub de José Luis (abre en una nueva pestaña)"><Github size={19} aria-hidden="true" /></a>
-            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de José Luis (abre en una nueva pestaña)"><Linkedin size={19} aria-hidden="true" /></a>
+            <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" aria-label={`GitHub (${t.common.newTab})`}><Github size={19} aria-hidden="true" /></a>
+            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn (${t.common.newTab})`}><Linkedin size={19} aria-hidden="true" /></a>
           </div>
         </div>
       </footer>
-      <Toaster />
+      <Toaster containerAriaLabel={t.gallery.notifications} />
       <PortfolioMotion />
     </div>
   );

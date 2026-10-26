@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-15T01:32:38Z",
+  "generatedAt": "2026-10-15T17:45:26.633Z",
   "title": "Design System: Portafolio de José Luis Rivera Viera",
   "extensions": {
     "colorMeta": {
@@ -202,6 +202,11 @@
         "name": "modal-gallery",
         "value": "0 24px 80px #20101b33",
         "purpose": "Superposición del panel de galería; los artículos de la página permanecen planos."
+      },
+      {
+        "name": "device-frame",
+        "value": "0 12px 24px #24232726",
+        "purpose": "Relieve localizado del teléfono dentro de la portada; el artículo conserva su fondo abierto."
       }
     ],
     "motion": [
@@ -233,7 +238,7 @@
       {
         "name": "project-unveil",
         "value": "850ms cubic-bezier(0.16, 1, 0.3, 1); delay 120ms",
-        "purpose": "Entrada única de la composición de producto en el hero."
+        "purpose": "Entrada única del retrato personal en la portada."
       },
       {
         "name": "signature-stroke",
@@ -269,6 +274,11 @@
         "name": "reduced-motion",
         "value": "animation: none for entries, stroke and gallery image; remaining transitions 0.01ms; 1 iteration; scroll-behavior: auto",
         "purpose": "PortfolioMotion cancela sus entradas y deja contenido legible; CSS retira desplazamientos de respuesta. El progreso refleja el desplazamiento sin animación autónoma."
+      },
+      {
+        "name": "device-response",
+        "value": "480ms cubic-bezier(0.16, 1, 0.3, 1); opposite tilts from 4deg to 2deg",
+        "purpose": "Respuesta breve de los marcos de teléfono al pasar el puntero; las capturas originales permanecen intactas."
       }
     ],
     "breakpoints": [
@@ -291,6 +301,137 @@
     "tonalRampGeneration": {
       "purpose": "Muestras para el panel; no son colores adicionales usados por la página.",
       "method": "Conversión sRGB a OKLCH y ocho pasos de luminosidad de 15% a 95%, manteniendo tono y croma."
+    },
+    "layout": [
+      {
+        "name": "personal-introduction",
+        "value": "minmax(0, 1.6fr) minmax(0, .85fr); gap 96px; portrait max-width 340px",
+        "purpose": "Nombre y presentación personal junto al retrato, sin proyecto en la portada."
+      },
+      {
+        "name": "project-selection",
+        "value": "repeat(2,minmax(0,1fr)); gap 64px 40px; media 16/10",
+        "purpose": "Ocho proyectos con la misma jerarquía; una columna hasta 760px."
+      },
+      {
+        "name": "mobile-portrait",
+        "value": "76px × 86px; radius 12px",
+        "purpose": "Retrato compacto junto a una frase de desarrollo y al enlace social, sin localidad."
+      },
+      {
+        "name": "portrait-gallery",
+        "value": "height clamp(340px,58dvh,600px); phone aspect 390/844; object-fit contain",
+        "purpose": "Cada captura completa lleva un titular y un marco de teléfono o navegador sobre el fondo del proyecto."
+      },
+      {
+        "name": "about-and-background",
+        "value": "intro 1.1fr 1fr, gap 80px; intro stacks at 1050px; qualities stack at 400px; experience/education 1.2fr 1fr, gap 64px, stacks at 760px",
+        "purpose": "Personal narrative and work approach precede separate experience and education columns."
+      },
+      {
+        "name": "header-preferences",
+        "value": "Desktop 88px; mobile two rows, min-height 108px; 44px controls",
+        "purpose": "Keep navigation, language and theme available at narrow widths."
+      }
+    ],
+    "mediaProvenance": [
+      {
+        "name": "mobile-projects",
+        "method": "Capturas reales de interfaces móviles enmarcadas con CSS; la UI no se regenera.",
+        "purpose": "Conservar el producto visible y declarar el contexto local o demo."
+      },
+      {
+        "name": "antoja-food-imagery",
+        "method": "Cuatro fotografías gastronómicas ilustrativas creadas con ImageGen se añadieron al catálogo demo externo antes de capturar la interfaz Flutter original.",
+        "originals": "PNG conservados fuera del repositorio en .codex/generated_images; capturas WebP en el portafolio.",
+        "sourceNote": "Interfaz Flutter original en web móvil, con catálogo de demostración y fotografías gastronómicas ilustrativas creadas para esta presentación."
+      },
+      {
+        "name": "armonyx-resident-access",
+        "method": "Seis capturas móviles locales de Las Fincas Residencial desde la aplicación MapLibre original: inicio, mapa, leyenda, reportes, detalle e invitación.",
+        "constraint": "No incluir credenciales en la UI, las capturas, los recursos o la documentación pública. El trazado procede de los GeoJSON originales; las coordenadas individuales de casas no estaban asignadas y los códigos siguen el respaldo de distribución de la aplicación."
+      },
+      {
+        "name": "gallery-inventory",
+        "counts": {
+          "Civix": 6,
+          "ArmonyX": 6,
+          "Antoja": 10,
+          "Konansa": 3,
+          "BlueSense": 4,
+          "Ramírez Plaza": 4,
+          "Nova-Sense": 6,
+          "Echo": 3
+        },
+        "method": "42 materiales distintos. BlueSense incorpora cuatro capturas del sitio original en Neocities: mapa, presentación, propuesta y leyenda. Se conservan sus interfaces y el contexto de prototipo."
+      },
+      {
+        "name": "bluesense-original-site",
+        "method": "Cuatro capturas originales de https://joseluisrivera.neocities.org/BlueSense/, convertidas a WebP calidad 92 sin recortar.",
+        "constraint": "Conservar el prototipo original y su marca visible; no presentar sus indicadores como mediciones verificadas de producción."
+      }
+    ],
+    "galleryPresentation": {
+      "panel": "max-width 980px; padding 24px; outer gap 40px; mobile padding 16px, outer gap 20px",
+      "themes": {
+        "default": "#45333b",
+        "antoja": "#fff1e9",
+        "armonyx": "#2e3768",
+        "civix": "#214c3a",
+        "konansa": "#293f4d",
+        "bluesense": "#164955",
+        "ramirez plaza": "#67453f",
+        "nova-sense": "#244c4b",
+        "echo": "#303d5b"
+      },
+      "phone": "6px dark frame; radius 28px (26px mobile), inner 22px; no simulated camera overlay",
+      "landscape": "16/10 browser frame with 26px toolbar; original image contained",
+      "filters": "Antoja: Todas, Cliente, Negocio, Repartidor; reset index when filtering; 44px minimum height",
+      "thumbnails": "76x50px; mobile 60x44px; object-fit contain; selected thumbnail scrolls into view",
+      "navigation": "44x44px arrows; circular within filter; keyboard ArrowLeft/ArrowRight; close resets filter, index and view",
+      "themeForegrounds": {
+        "antoja": "#242327",
+        "default": "#ffffff"
+      },
+      "antojaSurface": "--antoja-surface shared between cover and gallery (#fff1e9)"
+    },
+    "localization": {
+      "languages": [
+        "es",
+        "en"
+      ],
+      "initial": "Accept-Language negotiated on the server; unsupported languages fall back to Spanish",
+      "manual": "jlrv-locale cookie wins; router.refresh preserves the current page",
+      "coverage": "Navigation, metadata, content, eight projects, 42 gallery images, alt text, notes, controls and form feedback",
+      "screenshots": "Original project interfaces are preserved in their source language",
+      "selector": {
+        "implementation": "Radix Select",
+        "presentation": "168px themed panel, 12px radius, 44px options, garnet selected state with checkmark",
+        "interaction": "Arrow keys, typeahead, Enter, Escape and outside dismissal; 160ms entrance with reduced-motion support",
+        "shadow": "0 12px 36px #20101b26"
+      }
+    },
+    "colorModes": {
+      "initial": "light",
+      "storage": "jlrv-theme",
+      "engine": "next-themes; class attribute; stable controls; disableTransitionOnChange",
+      "dark": {
+        "background": "#171517",
+        "foreground": "#f2ebed",
+        "primary": "#f0a0af",
+        "action": "#8b263c",
+        "actionHover": "#a33850",
+        "actionForeground": "#ffffff",
+        "mutedForeground": "#bcb1b8",
+        "aboutSurface": "#211d21",
+        "contactSurface": "#251e23",
+        "border": "#3b3339",
+        "placeholder": "#b9aab4"
+      },
+      "projectInvariant": {
+        "antojaSurface": "#fff1e9",
+        "antojaForeground": "#242327"
+      }
     }
   },
   "components": [
@@ -322,9 +463,9 @@
       "name": "Artículo de proyecto",
       "kind": "card",
       "refersTo": "project-article",
-      "description": "Bloque de contenido que acompaña una captura; artículo abierto sin panel ni sombra.",
-      "html": "<article class=\"ds-project\"><div class=\"ds-project-heading\"><h3>BlueSense</h3><span class=\"ds-project-category\">IoT · Calidad del agua</span></div><p class=\"ds-project-description\">Sistema IoT y web para monitorear la calidad del agua en ríos y ayudar a comunidades afectadas por la contaminación.</p><a class=\"ds-project-link\" href=\"https://bluesense.atwebpages.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Ver proyecto <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a></article>",
-      "css": ".ds-project{font-family:var(--font-manrope,Manrope),sans-serif;display:flex;flex-direction:column;min-width:0;color:var(--foreground,#242327)}.ds-project-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-top:22px}.ds-project-heading h3{margin:0;font-size:22px;font-weight:600;line-height:1.65;letter-spacing:-0.025em}.ds-project-category{font-size:12px;line-height:1.6;color:var(--muted-foreground,#66636b);text-align:right}.ds-project-description{margin:10px 0 0;max-width:65ch;font-size:14px;line-height:1.85;color:var(--muted-foreground,#66636b)}.ds-project-link{display:inline-flex;align-items:center;align-self:flex-start;gap:10px;padding:20px 0 10px;margin-top:auto;font-size:13px;font-weight:700;line-height:1.65;color:var(--primary,#800000);text-decoration:none;text-underline-offset:5px}.ds-project-link:hover{text-decoration:underline}.ds-project-link:focus-visible{outline:2px solid var(--primary,#800000);outline-offset:5px;}@media(min-width:761px) and (max-width:1050px){.ds-project-heading{align-items:flex-start;flex-direction:column;gap:4px}.ds-project-category{text-align:left}}@media(max-width:760px){.ds-project-heading{margin-top:16px;gap:12px;flex-wrap:wrap}.ds-project-heading h3{font-size:21px}.ds-project-category{font-size:11px;text-align:left}.ds-project-link{padding-top:12px}}@media(max-width:400px){.ds-project-heading{align-items:flex-start;flex-direction:column;gap:3px}}.ds-project-link svg{transition:transform 240ms cubic-bezier(0.16,1,0.3,1)}.ds-project-link:hover svg{transform:translate(2px,-2px)}@media(prefers-reduced-motion:reduce){.ds-project-link svg{transition:none}.ds-project-link:hover svg{transform:none}}"
+      "description": "Artículo abierto de la selección común: título, categoría, descripción y acciones, con tecnología y reconocimiento cuando existen.",
+      "html": "<article class=\"ds-project\"><div class=\"ds-project-heading\"><h3>BlueSense</h3><span class=\"ds-project-category\">IoT · Calidad del agua</span></div><p class=\"ds-project-description\">Sistema IoT y web para monitorear la calidad del agua en ríos y ayudar a comunidades afectadas por la contaminación.</p><a class=\"ds-project-link\" href=\"https://joseluisrivera.neocities.org/BlueSense/\" target=\"_blank\" rel=\"noopener noreferrer\">Ver proyecto <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a></article>",
+      "css": ".ds-project{font-family:var(--font-manrope,Manrope),sans-serif;display:flex;flex-direction:column;min-width:0;color:var(--foreground,#242327)}.ds-project-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-top:22px}.ds-project-heading h3{margin:0;font-size:22px;font-weight:600;line-height:1.65;letter-spacing:-0.025em}.ds-project-category{font-size:12px;line-height:1.6;color:var(--muted-foreground,#66636b);text-align:right}.ds-project-description{margin:10px 0 0;max-width:65ch;font-size:14px;line-height:1.85;color:var(--muted-foreground,#66636b)}.ds-project-link{display:inline-flex;align-items:center;align-self:flex-start;gap:10px;padding:22px 0 10px;margin-top:auto;font-size:13px;font-weight:700;line-height:1.65;color:var(--primary,#800000);text-decoration:none;text-underline-offset:5px}.ds-project-link:hover{text-decoration:underline}.ds-project-link:focus-visible{outline:2px solid var(--primary,#800000);outline-offset:5px;}@media(min-width:761px) and (max-width:1050px){.ds-project-heading{align-items:flex-start;flex-direction:column;gap:4px}.ds-project-category{text-align:left}}@media(max-width:760px){.ds-project-heading{margin-top:16px;gap:12px;flex-wrap:wrap}.ds-project-heading h3{font-size:21px}.ds-project-category{font-size:11px;text-align:left}.ds-project-link{padding-top:16px}}@media(max-width:400px){.ds-project-heading{align-items:flex-start;flex-direction:column;gap:3px}}.ds-project-link svg{transition:transform 240ms cubic-bezier(0.16,1,0.3,1)}.ds-project-link:hover svg{transform:translate(2px,-2px)}@media(prefers-reduced-motion:reduce){.ds-project-link svg{transition:none}.ds-project-link:hover svg{transform:none}}"
     },
     {
       "name": "Campos de contacto",
@@ -356,23 +497,32 @@
       "refersTo": "gallery-arrow",
       "description": "Controles anterior/siguiente con nombre accesible y foco visible.",
       "html": "<div class=\"ds-gallery-arrows\"><button class=\"ds-gallery-arrow\" type=\"button\" aria-label=\"Imagen anterior\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m15 18-6-6 6-6\"/></svg></button><button class=\"ds-gallery-arrow\" type=\"button\" aria-label=\"Imagen siguiente\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"/></svg></button></div>",
-      "css": ".ds-gallery-arrows{display:flex;gap:14px}.ds-gallery-arrow{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:40px;height:44px;padding:0;background:transparent;border:1px solid var(--border,#dfdde1);border-radius:6px;color:var(--primary,#800000);cursor:pointer}.ds-gallery-arrow:hover{background:var(--accent,#f5e9e9);border-color:var(--primary,#800000)}.ds-gallery-arrow:focus-visible{outline:2px solid var(--primary,#800000);outline-offset:5px;}@media(max-width:760px){.ds-gallery-arrows{gap:8px}.ds-gallery-arrow{width:44px}}"
+      "css": ".ds-gallery-arrows{display:flex;gap:14px}.ds-gallery-arrow{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:44px;height:44px;padding:0;background:transparent;border:1px solid var(--border,#dfdde1);border-radius:6px;color:var(--primary,#800000);cursor:pointer}.ds-gallery-arrow:hover{background:var(--accent,#f5e9e9);border-color:var(--primary,#800000)}.ds-gallery-arrow:focus-visible{outline:2px solid var(--primary,#800000);outline-offset:5px;}@media(max-width:760px){.ds-gallery-arrows{gap:8px}.ds-gallery-arrow{width:44px}}"
     },
     {
       "name": "Panel de galería",
       "kind": "custom",
       "refersTo": "gallery-panel",
-      "description": "Contenedor modal y cabecera; la página principal conserva su tratamiento plano.",
-      "html": "<section class=\"ds-gallery-panel\" aria-labelledby=\"ds-gallery-title\"><div class=\"ds-gallery-header\"><h2 class=\"ds-gallery-title\" id=\"ds-gallery-title\">Konansa</h2><p class=\"ds-gallery-description\">Un recorrido visual por el sistema de finanzas personales desarrollado durante mi estadía profesional en Wallavi.</p></div></section>",
-      "css": ".ds-gallery-panel{font-family:var(--font-manrope,Manrope),sans-serif;width:calc(100% - 40px);max-width:1040px;max-height:calc(100dvh - 40px);overflow-y:auto;padding:30px;border:0;border-radius:16px;background:var(--background,#fafafa);color:var(--foreground,#242327);box-shadow:0 24px 80px #20101b33}.ds-gallery-header{text-align:left;padding-right:34px;display:flex;flex-direction:column;gap:10px}.ds-gallery-title{margin:0;font-size:27px;font-weight:600;line-height:1;letter-spacing:-0.03em}.ds-gallery-description{margin:0;max-width:72ch;font-size:13px;line-height:1.7;color:var(--muted-foreground,#66636b)}@media(max-width:760px){.ds-gallery-panel{width:calc(100% - 24px);max-height:calc(100dvh - 24px);padding:20px}.ds-gallery-title{font-size:24px}.ds-gallery-description{font-size:12px}}"
+      "description": "Panel modal de ancho y altura acotados, con descripción desplegable y presentaciones decoradas por proyecto.",
+      "html": "<section class=\"ds-gallery-panel\" aria-labelledby=\"ds-gallery-title\"><div class=\"ds-gallery-header\"><h2 class=\"ds-gallery-title\" id=\"ds-gallery-title\">Konansa</h2><details class=\"ds-gallery-details\"><summary>Sobre el proyecto</summary><p class=\"ds-gallery-description\">Un recorrido visual por el sistema de finanzas personales desarrollado durante mi estadía profesional en Wallavi.</p></details></div></section>",
+      "css": ".ds-gallery-panel{font-family:var(--font-manrope,Manrope),sans-serif;width:calc(100% - 40px);max-width:980px;max-height:calc(100dvh - 40px);overflow-y:auto;padding:24px;border:0;border-radius:16px;background:var(--background,#fafafa);color:var(--foreground,#242327);box-shadow:0 24px 80px #20101b33}.ds-gallery-header{text-align:left;padding-right:34px;display:flex;flex-direction:column;gap:6px}.ds-gallery-title{margin:0;font-size:24px;font-weight:600;line-height:1;letter-spacing:-0.03em}.ds-gallery-description{margin:0;max-width:72ch;font-size:13px;line-height:1.7;color:var(--muted-foreground,#66636b)}@media(max-width:760px){.ds-gallery-panel{width:calc(100% - 20px);max-height:calc(100dvh - 20px);padding:16px}.ds-gallery-title{font-size:22px}.ds-gallery-description{font-size:12px}}.ds-gallery-details summary{cursor:pointer;padding-block:6px;color:var(--muted-foreground,#66636b);font-size:12px}.ds-gallery-details summary:focus-visible{outline:2px solid var(--primary,#800000);outline-offset:3px}"
+    },
+    {
+      "name": "Composición móvil",
+      "kind": "custom",
+      "refersTo": "mobile-project-cover",
+      "description": "Marcos CSS para dos capturas móviles de Civix y ArmonyX y tres de Antoja, una por rol. La aplicación inserta capturas auténticas.",
+      "html": "<div class=\"ds-mobile-project-cover\" role=\"img\" aria-label=\"Dos marcos de teléfono para capturas móviles\"><span class=\"ds-device-frame\"><span class=\"ds-device-screen\"><span>Captura original</span></span></span><span class=\"ds-device-frame\"><span class=\"ds-device-screen\"><span>Captura original</span></span></span></div>",
+      "css": ".ds-mobile-project-cover{display:flex;align-items:center;justify-content:center;gap:26px;padding:24px;width:min(100%,540px);height:338px;box-sizing:border-box;overflow:hidden;border-radius:12px;background:#e8ede9}.ds-device-frame{display:block;flex:0 0 auto;height:87%;aspect-ratio:390/844;padding:5px;box-sizing:border-box;border-radius:22px;background:#242327;box-shadow:0 12px 24px #24232726;transform:translateY(9px) rotate(-4deg);transition:transform 480ms cubic-bezier(0.16,1,0.3,1)}.ds-device-frame+.ds-device-frame{transform:translateY(-9px) rotate(4deg)}.ds-device-screen{display:flex;align-items:center;justify-content:center;width:100%;height:100%;overflow:hidden;border-radius:17px;background:#101319}.ds-device-screen span{padding:14px;color:#fafafa;text-align:center;font:12px/1.65 var(--font-manrope,Manrope),sans-serif}.ds-mobile-project-cover:hover .ds-device-frame{transform:translateY(4px) rotate(-2deg)}.ds-mobile-project-cover:hover .ds-device-frame+.ds-device-frame{transform:translateY(-12px) rotate(2deg)}@media(max-width:760px){.ds-mobile-project-cover{gap:22px;padding:16px}.ds-device-frame{height:89%;padding:4px;border-radius:16px}.ds-device-screen{border-radius:12px}}@media(prefers-reduced-motion:reduce){.ds-device-frame{transition:none}.ds-mobile-project-cover:hover .ds-device-frame{transform:translateY(9px) rotate(-4deg)}.ds-mobile-project-cover:hover .ds-device-frame+.ds-device-frame{transform:translateY(-9px) rotate(4deg)}}"
     }
   ],
   "narrative": {
     "northStar": "Documentación de ingeniería",
-    "overview": "El sistema construido presenta el trabajo como un archivo abierto: fondo claro, tinta neutra, imágenes de proyectos y granate para la identidad y la interacción. La composición tiene aire y una jerarquía precisa, coherentes con el carácter minimalista y profesional registrado en PRODUCT.md.\n\nManrope sostiene toda la superficie, desde el nombre de gran tamaño hasta los metadatos. La separación se obtiene con espacio, líneas finas y cambios de tono. Las capturas principales mantienen el artefacto completo; el retrato y las miniaturas tienen el recorte específico que requiere su función.\n\nLa página permanece plana durante la lectura. La galería introduce una capa modal delimitada por un fondo atenuado y una sombra difusa. El granate se concentra en acciones, selección y detalles: un trazo bajo el nombre, el progreso de lectura y el acento de contacto. La muestra inicial y el contacto descansan sobre neutros claros. El movimiento presenta el contenido una vez y responde a la interacción con gestos breves.",
+    "overview": "El sistema construido presenta al autor y su trabajo como un archivo abierto: fondo claro, tinta neutra, retrato personal, imágenes de proyectos y granate para la identidad y la interacción. La composición tiene aire y una jerarquía precisa, coherentes con el carácter minimalista y profesional registrado en PRODUCT.md.\n\nManrope sostiene toda la superficie, desde el nombre de gran tamaño hasta los metadatos. La separación se obtiene con espacio, líneas finas y cambios de tono. Las capturas principales mantienen el artefacto completo; el retrato y las miniaturas tienen el recorte específico que requiere su función.\n\nLa portada reúne nombre, presentación profesional y retrato; los proyectos aparecen después como artículos de igual jerarquía. La página permanece plana durante la lectura. Los teléfonos de las portadas móviles tienen una sombra localizada y la galería introduce una capa modal delimitada por un fondo atenuado y una sombra difusa. El granate se concentra en acciones, selección y detalles: un trazo bajo el nombre, el progreso de lectura y el acento de contacto. El movimiento presenta el contenido una vez y responde a la interacción con gestos breves.",
     "keyCharacteristics": [
       "Un solo acento granate sobre neutros claros.",
       "Una sola familia tipográfica y jerarquía por tamaño, peso y espaciado.",
+      "Presentación personal con retrato y una selección de proyectos de igual jerarquía.",
       "Artículos abiertos con capturas completas y metadatos próximos al proyecto.",
       "Controles discretos, foco visible y estados de envío explícitos.",
       "Entradas sutiles, trazo de firma y progreso de lectura sin animaciones en bucle."
@@ -380,12 +530,12 @@
     "rules": [
       {
         "name": "The Complete Image Rule",
-        "body": "Las imágenes principales de proyectos se muestran completas. El recorte queda limitado al retrato y a las miniaturas de navegación.",
+        "body": "Las galerías y las miniaturas muestran las capturas completas. Un titular y un marco de teléfono o navegador presentan cada imagen. El recorte editorial se reserva al retrato.",
         "section": "overview"
       },
       {
         "name": "The Single Accent Rule",
-        "body": "El granate reúne identidad, enlaces, selección y acción. En esta superficie se reserva a controles y detalles; la muestra inicial y el contacto conservan fondos neutros.",
+        "body": "El granate reúne identidad, enlaces, selección y acción. En esta superficie se reserva a controles y detalles; la presentación personal y el contacto conservan fondos neutros.",
         "section": "colors"
       },
       {
@@ -400,7 +550,7 @@
       },
       {
         "name": "The Modal Depth Rule",
-        "body": "La sombra expresa la superposición de la galería. Los proyectos de la página se separan con espacio, líneas y tono.",
+        "body": "La sombra expresa la superposición de la galería y el relieve localizado de los teléfonos. Los artículos de proyecto se separan con espacio, líneas y tono.",
         "section": "elevation"
       },
       {
@@ -426,9 +576,9 @@
       "Do conservar la adaptación de columnas, el desplazamiento de miniaturas y la preferencia de movimiento reducido."
     ],
     "donts": [
-      "Don't recortar las capturas principales para llenar su marco; el retrato y las miniaturas tienen una función distinta.",
+      "Don't recortar las capturas o miniaturas para llenar su marco; el retrato tiene una función distinta.",
       "Don't encerrar cada proyecto en un panel con fondo y sombra; los artículos construidos se organizan mediante imagen, tipografía y espacio.",
-      "Don't convertir la muestra inicial o el contacto en grandes superficies granate; el acento se concentra en detalles y acciones.",
+      "Don't convertir la presentación personal o el contacto en grandes superficies granate; el acento se concentra en detalles y acciones.",
       "Don't añadir animaciones en bucle ni ocultar contenido detrás de una entrada obligatoria.",
       "Don't reemplazar las etiquetas de los campos ni los nombres accesibles de las flechas por iconos sin descripción."
     ]

@@ -1,0 +1,9 @@
+import "server-only";
+import { cache } from "react";
+import { cookies, headers } from "next/headers";
+import { localeCookie, resolveLocale } from "@/lib/locale";
+
+export const getLocale = cache(async () => {
+  const [cookieStore, requestHeaders] = await Promise.all([cookies(), headers()]);
+  return resolveLocale(cookieStore.get(localeCookie)?.value, requestHeaders.get("accept-language"));
+});

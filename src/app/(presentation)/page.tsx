@@ -1,69 +1,52 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDownRight, ArrowUpRight, Award, Github, Linkedin } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Focus, Github, Lightbulb, Linkedin, TrendingUp, UsersRound } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
-import { ProjectModal } from "@/components/project-modal";
-import { konansaImages, konansaVideoId, projects, socialLinks } from "@/lib/portfolio";
+import { ProjectEntry } from "@/components/project-entry";
+import { socialLinks } from "@/lib/portfolio";
+import { getProjects } from "@/lib/portfolio-content";
+import { getLocale } from "@/lib/server-locale";
+import { messages } from "@/lib/messages";
 
-const technologies = ["PHP", "JavaScript", "Next.js", "React", "Laravel", "MySQL", "PostgreSQL", "Tailwind CSS"];
+const technologies = ["TypeScript", "JavaScript", "React", "Next.js", "Flutter", "Dart", "Node.js", "Express", "PHP", "Laravel", "PostgreSQL", "MySQL", "Git"];
+const approachIcons = [Lightbulb, TrendingUp, UsersRound, Focus];
 
-export default function PortfolioPage() {
+export default async function PortfolioPage() {
+  const locale = await getLocale();
+  const t = messages[locale];
+  const projects = getProjects(locale);
+
   return (
     <>
       <section className="page-width hero" aria-labelledby="hero-title">
         <div className="hero-copy">
           <h1 id="hero-title">José Luis{" "}<span>Rivera Viera.</span></h1>
-          <p className="hero-role">Desarrollador de software multiplataforma.</p>
-          <p className="hero-description">Transformo ideas en soluciones web robustas y escalables, con atención a lo que realmente importa.</p>
+          <p className="hero-role">{t.hero.role}</p>
+          <p className="hero-description">{t.hero.description}</p>
           <div className="hero-actions">
-            <Link href="#projects" className="primary-link">Ver proyectos <ArrowDownRight size={19} aria-hidden="true" /></Link>
-            <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-link neutral-link"><Github size={18} aria-hidden="true" /> GitHub</a>
+            <Link href="#projects" className="primary-link">{t.hero.projects} <ArrowDownRight size={19} aria-hidden="true" /></Link>
+            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-link neutral-link">{t.hero.connect} <ArrowUpRight size={17} aria-hidden="true" /></a>
           </div>
-          <p className="availability"><span aria-hidden="true" />Disponible para proyectos</p>
+          <p className="availability"><span aria-hidden="true" />{t.hero.availability}</p>
         </div>
-        <figure className="hero-showcase">
-          <div className="hero-preview">
-            <Image src="/imagenes/konansa/producto-v2.webp" alt="Presentación visual de Konansa con su interfaz móvil en modo claro y oscuro y su asistente financiero" fill priority sizes="(max-width: 760px) 90vw, 560px" className="object-contain" />
+        <figure className="hero-person">
+          <div className="hero-portrait">
+            <Image src="/imagenes/yo.jpg" alt="José Luis Rivera Viera" fill unoptimized priority sizes="(max-width: 760px) 240px, 340px" className="object-cover" />
           </div>
-          <figcaption className="showcase-footer">
-            <div className="showcase-heading"><h2>Konansa</h2><span>Finanzas personales</span></div>
-            <ProjectModal title="Konansa" description="Un recorrido visual por el sistema de finanzas personales desarrollado durante mi estadía profesional en Wallavi." images={konansaImages} videoId={konansaVideoId} triggerLabel="Explorar Konansa" triggerClassName="showcase-link" />
+          <figcaption className="hero-location">
+            <span>{t.hero.portraitCaption}</span>
+            <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" aria-label={t.hero.github}><Github size={18} aria-hidden="true" /></a>
           </figcaption>
         </figure>
       </section>
 
       <section id="projects" className="page-width projects-section" aria-labelledby="projects-title">
         <div className="section-heading" data-reveal="copy">
-          <h2 id="projects-title">Proyectos seleccionados<span>.</span></h2>
-          <p>Soluciones web, datos y automatización.<br />Una mirada a lo que he construido.</p>
+          <h2 id="projects-title">{t.projects.heading}<span>.</span></h2>
+          <p>{t.projects.intro} <br />{t.projects.selection}</p>
         </div>
-
-        <article className="featured-project">
-          <div className="featured-image" data-reveal="media">
-            <Image src="/imagenes/konansa/panel-v2.webp" alt="Composición visual del panel financiero de Konansa en laptop, tablet y teléfono" fill sizes="(max-width: 760px) 90vw, 650px" className="object-contain" />
-          </div>
-          <div className="featured-copy">
-            <h3>Konansa</h3>
-            <p className="project-category">Estadía profesional · Control financiero</p>
-            <p className="project-description">Sistema integral de finanzas personales, desarrollado como proyecto de estadía profesional en <a href="https://www.wallavi.com/" target="_blank" rel="noopener noreferrer">Wallavi</a>.</p>
-            <p className="archive-note">La web ya no está disponible. Explora el proyecto a través de sus presentaciones visuales y del video original.</p>
-            <ProjectModal title="Konansa" description="Un recorrido visual por el sistema de finanzas personales desarrollado durante mi estadía profesional en Wallavi." images={konansaImages} videoId={konansaVideoId} triggerLabel="Ver galería y video" />
-          </div>
-        </article>
-
         <div className="projects-grid">
-          {projects.map((project) => (
-            <article className="project" key={project.title}>
-              <a href={project.href} target="_blank" rel="noopener noreferrer" className="project-image" aria-label={`Ver ${project.title} (abre en una nueva pestaña)`}>
-                <Image src={project.image} alt={project.alt} fill sizes="(max-width: 760px) 90vw, 560px" className="object-contain" />
-                <span className="project-image-arrow" aria-hidden="true"><ArrowUpRight size={20} /></span>
-              </a>
-              <div className="project-title-row"><h3>{project.title}</h3><span className="project-category">{project.category}</span></div>
-              <p className="project-description">{project.description}</p>
-              {project.recognition && <p className="project-recognition"><Award size={16} aria-hidden="true" />{project.recognition}</p>}
-              <a href={project.href} target="_blank" rel="noopener noreferrer" className="text-link" aria-label={`Ver proyecto ${project.title} (abre en una nueva pestaña)`}>Ver proyecto <ArrowUpRight size={17} aria-hidden="true" /></a>
-            </article>
-          ))}
+          {projects.map((project) => <ProjectEntry key={project.title} project={project} locale={locale} />)}
           {/* Para imagenes
             {/* --- NUEVO PROYECTO 4 (CON MODAL) --- 
             <Card className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow">
@@ -139,31 +122,64 @@ export default function PortfolioPage() {
       </section>
 
       <section id="about" className="about-section" aria-labelledby="about-title">
-        <div className="page-width about-layout">
-          <figure className="portrait">
-            <div className="portrait-image" data-reveal="media"><Image src="/imagenes/yo.jpg" alt="José Luis Rivera Viera" fill sizes="(max-width: 760px) 280px, 320px" className="object-cover" /></div>
-            <figcaption>José Luis Rivera Viera<span>Desarrollador de software</span></figcaption>
-          </figure>
-          <div className="about-copy" data-reveal="copy">
-            <h2 id="about-title">Un poco sobre mí<span>.</span></h2>
-            <p>Estudiante de Ingeniería en Desarrollo y Gestión de Software, con formación como TSU en Desarrollo de Software Multiplataforma.</p>
-            <p>Me enfoco en desarrollo web full-stack, con experiencia en proyectos reales utilizando Next.js, React y MySQL. Me apasiona crear soluciones eficientes y escalables en entornos empresariales.</p>
-            <h3 className="technology-heading">Tecnologías con las que trabajo</h3>
-            <ul className="technology-list">{technologies.map((technology) => <li key={technology}>{technology}</li>)}</ul>
-            <div className="about-socials">
-              <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-link neutral-link"><Linkedin size={18} aria-hidden="true" /> LinkedIn <ArrowUpRight size={15} aria-hidden="true" /></a>
-              <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-link neutral-link"><Github size={18} aria-hidden="true" /> GitHub <ArrowUpRight size={15} aria-hidden="true" /></a>
+        <div className="page-width about-content">
+          <div className="about-layout">
+            <div className="about-copy" data-reveal="copy">
+              <h2 id="about-title">{t.about.heading}<span>.</span></h2>
+              {t.about.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              <div className="about-socials">
+                <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-link neutral-link"><Linkedin size={18} aria-hidden="true" /> LinkedIn <ArrowUpRight size={15} aria-hidden="true" /></a>
+                <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-link neutral-link"><Github size={18} aria-hidden="true" /> GitHub <ArrowUpRight size={15} aria-hidden="true" /></a>
+              </div>
+            </div>
+            <div className="about-practice" data-reveal="copy">
+              <ul className="approach-list" aria-label={t.about.strengthsLabel}>
+                {t.about.strengths.map((strength, index) => {
+                  const Icon = approachIcons[index];
+                  return <li key={strength.title}><Icon size={20} aria-hidden="true" /><div><h3>{strength.title}</h3><p>{strength.description}</p></div></li>;
+                })}
+              </ul>
+              <h3 className="technology-heading">{t.about.technologies}</h3>
+              <ul className="technology-list">{technologies.map((technology) => <li key={technology}>{technology}</li>)}</ul>
             </div>
           </div>
+
+          <section className="experience-education" aria-labelledby="background-title">
+            <h3 id="background-title">{t.about.background}<span>.</span></h3>
+            <div className="background-columns">
+              <div className="experience-list">
+                <h4 className="background-column-title">{t.about.experience}</h4>
+                {t.about.jobs.map((job) => (
+                  <article className="experience-item" key={job.title}>
+                    <p className="experience-date">{job.date}</p>
+                    <h5>{job.title}</h5>
+                    <p className="experience-role">{job.role}</p>
+                    <ul className="experience-points">{job.points.map((point) => <li key={point}>{point}</li>)}</ul>
+                  </article>
+                ))}
+              </div>
+              <div className="education-list">
+                <h4 className="background-column-title">{t.about.education}</h4>
+                {t.about.studies.map((study) => (
+                  <article className="education-item" key={study.title}>
+                    <p className="experience-date">{study.date}</p>
+                    <h5>{study.title}</h5>
+                    <p className="education-school">{study.school}</p>
+                    <p className="education-description">{study.description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
         </div>
       </section>
 
       <section id="contact" className="contact-section" aria-labelledby="contact-title">
         <div className="page-width contact-layout">
           <div className="contact-copy">
-            <h2 id="contact-title">¿Tienes una idea?<br /><span>Hablemos.</span></h2>
-            <p>Cuéntame sobre tu proyecto.<br />Me gustaría conocerlo y darle forma contigo.</p>
-            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="contact-social">También me encuentras en LinkedIn <ArrowUpRight size={17} aria-hidden="true" /></a>
+            <h2 id="contact-title">{t.contact.question}<br /><span>{t.contact.heading}</span></h2>
+            <p>{t.contact.intro}<br />{t.contact.description}</p>
+            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="contact-social">{t.contact.linkedin} <ArrowUpRight size={17} aria-hidden="true" /></a>
           </div>
           <ContactForm />
         </div>

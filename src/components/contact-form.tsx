@@ -4,17 +4,19 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { toast } from "sonner" // <--- CAMBIO AQUÍ: Importación directa
+import { toast } from "sonner"
 import { Loader2, Send } from "lucide-react"
+import { useSiteLocale } from "@/components/site-preferences"
 
 export function ContactForm() {
+  const { t } = useSiteLocale()
   const [isLoading, setIsLoading] = useState(false)
-  const [feedback, setFeedback] = useState("")
+  const [feedback, setFeedback] = useState<"sending" | "sent" | "sendError" | "networkError" | null>(null)
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setIsLoading(true)
-    setFeedback("Enviando tu mensaje…")
+    setFeedback("sending")
 
     const form = event.currentTarget
     const formData = new FormData(form)
@@ -31,24 +33,22 @@ export function ContactForm() {
       })
 
       if (response.ok) {
-        // CAMBIO AQUÍ: Sintaxis de Sonner (toast.success)
-        toast.success("¡Mensaje enviado con éxito!", {
-          description: "Gracias por contactarme. Te responderé lo antes posible.",
+        toast.success(t.form.successTitle, {
+          description: t.form.successDescription,
         })
         
-        setFeedback("¡Mensaje enviado! Gracias por escribirme.")
+        setFeedback("sent")
         form.reset()
       } else {
-        setFeedback("No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme por LinkedIn.")
-        // CAMBIO AQUÍ: Sintaxis de Sonner (toast.error)
-        toast.error("Error al enviar", {
-          description: "Hubo un problema. Por favor intenta contactarme por LinkedIn.",
+        setFeedback("sendError")
+        toast.error(t.form.errorTitle, {
+          description: t.form.errorDescription,
         })
       }
     } catch {
-      setFeedback("No se pudo conectar. Revisa tu conexión e inténtalo de nuevo.")
-      toast.error("Error de conexión", {
-        description: "No se pudo conectar con el servidor.",
+      setFeedback("networkError")
+      toast.error(t.form.networkTitle, {
+        description: t.form.networkDescription,
       })
     } finally {
       setIsLoading(false)
@@ -56,41 +56,41 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="contact-form" aria-label="Enviar un mensaje a José Luis">
+    <form onSubmit={handleSubmit} className="contact-form" aria-label={t.form.label}>
       <div className="form-row">
       <div className="form-field">
-        <label htmlFor="name" className="text-sm font-medium">Nombre</label>
+        <label htmlFor="name" className="text-sm font-medium">{t.form.name}</label>
         <Input 
           type="text" 
           id="name" 
           name="name" 
           autoComplete="name"
           className="contact-input"
-          placeholder="Tu nombre completo" 
+          placeholder={t.form.namePlaceholder}
           required 
           disabled={isLoading}
         />
       </div>
       <div className="form-field">
-        <label htmlFor="email" className="text-sm font-medium">Correo electrónico</label>
+        <label htmlFor="email" className="text-sm font-medium">{t.form.email}</label>
         <Input 
           type="email" 
           id="email" 
           name="email" 
           autoComplete="email"
           className="contact-input"
-          placeholder="ejemplo@correo.com" 
+          placeholder={t.form.emailPlaceholder}
           required 
           disabled={isLoading}
         />
       </div>
       </div>
       <div className="form-field">
-        <label htmlFor="message" className="text-sm font-medium">Mensaje</label>
+        <label htmlFor="message" className="text-sm font-medium">{t.form.message}</label>
         <Textarea 
           id="message" 
           name="message" 
-          placeholder="Escribe tu mensaje aquí..." 
+          placeholder={t.form.messagePlaceholder}
           className="contact-input contact-textarea"
           required 
           disabled={isLoading}
@@ -100,17 +100,17 @@ export function ContactForm() {
       <Button type="submit" className="contact-submit" disabled={isLoading}>
         {isLoading ? (
           <>
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Enviando...
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
+            {t.form.sending}
           </>
         ) : (
           <>
-            Enviar mensaje
-            <Send className="ml-2 h-4 w-4" />
+            {t.form.submit}
+            <Send className="ml-2 h-4 w-4" aria-hidden="true" />
           </>
         )}
       </Button>
-      <p className="form-status" role="status" aria-live="polite" aria-atomic="true">{feedback}</p>
+      <p className="form-status" role="status" aria-live="polite" aria-atomic="true">{feedback ? t.form[feedback] : ""}</p>
     </form>
   )
 }
